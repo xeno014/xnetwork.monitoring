@@ -1,110 +1,127 @@
-"""XenoTech Network Monitor — Phase 1: Project Foundation."""
+"""XenoTech Network Monitor — Phase 2: Basic IP Monitoring Engine."""
 
 from __future__ import annotations
 
-import ipaddress
-import json
 import sys
-from pathlib import Path
-from typing import TypedDict
+
+from config_loader import get_enabled_devices, load_devices
+from monitor import run_monitoring_loop, run_static_mode
+
+# Seconds between each full monitoring cycle in CONTINUE_MODE.
+CHECK_INTERVAL = 5
+
+# User-facing aliases → canonical mode name.
+MODE_ALIASES = {
+    "continue": "continue",
+    "1": "continue",
+    "static": "static",
+    "2": "static",
+}
 
 
-# Project root is one level above the src/ directory.
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DEVICES_CONFIG_PATH = PROJECT_ROOT / "config" / "devices.json"
+def normalize_mode(raw: str) -> str | None:
+    """Map a user mode string to ``continue`` or ``static``.
 
-
-class Device(TypedDict):
-    """Shape of a single device entry in devices.json."""
-
-    name: str
-    ip: str
-    enabled: bool
-
-
-def _validate_device(device: object, index: int) -> Device:
-    """Validate one device object and return it as a Device TypedDict."""
-    if not isinstance(device, dict):
-        raise ValueError(f"Device at index {index} must be an object.")
-
-    for field in ("name", "ip", "enabled"):
-        if field not in device:
-            raise ValueError(
-                f'Device at index {index} is missing required field "{field}".'
-            )
-
-    name = device["name"]
-    ip = device["ip"]
-    enabled = device["enabled"]
-
-    if not isinstance(name, str) or not name.strip():
-        raise ValueError(
-            f'Device at index {index}: "name" must be a non-empty string.'
-        )
-
-    if not isinstance(ip, str):
-        raise ValueError(f'Device at index {index}: "ip" must be a string.')
-
-    try:
-        ipaddress.IPv4Address(ip)
-    except ipaddress.AddressValueError as exc:
-        raise ValueError(
-            f'Device at index {index}: "ip" must be a valid IPv4 address.'
-        ) from exc
-
-    if not isinstance(enabled, bool):
-        raise ValueError(
-            f'Device at index {index}: "enabled" must be a boolean.'
-        )
-
-    return Device(name=name, ip=ip, enabled=enabled)
-
-
-def load_devices(config_path: Path = DEVICES_CONFIG_PATH) -> list[Device]:
-    """Load and validate the devices list from a JSON config file.
-
-    Raises:
-        FileNotFoundError: If the config file does not exist.
-        ValueError: If the JSON is invalid or fails basic validation.
-        OSError: If the config file cannot be read.
+    Accepts case-insensitive names and numeric shortcuts ``1`` / ``2``.
+    Returns None when the value is not recognized.
     """
-    if not config_path.is_file():
-        raise FileNotFoundError(f"Config file not found: {config_path}")
-
-    try:
-        with config_path.open(encoding="utf-8") as file:
-            data = json.load(file)
-    except json.JSONDecodeError as exc:
-        raise ValueError(f"Invalid JSON in {config_path}: {exc}") from exc
-
-    if not isinstance(data, dict) or "devices" not in data:
-        raise ValueError('Config must contain a top-level "devices" key.')
-
-    devices = data["devices"]
-    if not isinstance(devices, list):
-        raise ValueError('"devices" must be a list.')
-
-    return [_validate_device(device, index) for index, device in enumerate(devices)]
+    key = raw.strip().lower()
+    return MODE_ALIASES.get(key)
 
 
-def display_banner() -> None:
-    """Print the Phase 1 startup banner."""
+def prompt_mode(argv: list[str]) -> str | None:
+    """Resolve monitoring mode from CLI args or an interactive prompt.
+
+    Interactive invalid input is rejected with a clear message and the
+    user is asked again. Ctrl+C / EOF during the prompt exits cleanly
+    via KeyboardInterrupt / EOFError to the caller.
+    """
+    if len(argv) > 1:
+        mode = normalize_mode(argv[1])
+        if mode is not None:
+            return mode
+        print(
+            f'Unknown mode "{argv[1]}". '
+            'Use "continue"/"1" or "static"/"2".',
+            file=sys.stderr,
+        )
+        # Fall through to interactive selection so the user can recover.
+        print()
+
+    print("Select monitoring mode:")
+    print(
+        f"  1 / continue  - Automatic checks every {CHECK_INTERVAL} seconds"
+    )
+    print("  2 / static    - One check now; Ctrl+T to test again")
+    print()
+
+    while True:
+        raw = input("Mode: ").strip()
+        mode = normalize_mode(raw)
+        if mode is not None:
+            return mode
+        print(
+            f'Unknown mode "{raw}". '
+            'Please enter "continue"/"1" or "static"/"2".'
+        )
+        print()
+
+
+def display_banner(mode: str, device_count: int) -> None:
+    """Print the Phase 2 startup banner for the selected mode."""
     print("XenoTech Network Monitor")
     print("========================")
-    print("Phase: 1 - Project Foundation")
-    print("Status: System initialized successfully.")
+    print(f"Mode: {mode.upper()}")
+    print()
+    if mode == "continue":
+        print(f"Monitoring {device_count} device(s)...")
+        print()
 
 
-def main() -> int:
-    """Entry point for Phase 1."""
+def main(argv: list[str] | None = None) -> int:
+    """Load enabled devices and start the selected monitoring mode."""
+    if argv is None:
+        argv = sys.argv
+
     try:
         devices = load_devices()
     except (FileNotFoundError, ValueError, OSError) as exc:
         print(f"Error loading configuration: {exc}", file=sys.stderr)
         return 1
 
-    display_banner()
-    print(f"Loaded {len(devices)} device(s) from configuration.")
+    enabled = get_enabled_devices(devices)
+    if not enabled:
+        print("No enabled devices found in configuration.", file=sys.stderr)
+        print('Set "enabled": true for at least one device in config/devices.json.')
+        return 1
+
+    try:
+        mode = prompt_mode(argv)
+    except (EOFError, KeyboardInterrupt):
+        print()
+        print("Stopping XenoTech Network Monitor...")
+        print("Monitor stopped.")
+        return 0
+
+    if mode is None:
+        return 1
+
+    display_banner(mode, len(enabled))
+
+    try:
+        if mode == "static":
+            run_static_mode(enabled)
+        else:
+            run_monitoring_loop(enabled, CHECK_INTERVAL)
+    except KeyboardInterrupt:
+        print()
+        print("Stopping XenoTech Network Monitor...")
+        print("Monitor stopped.")
+        return 0
+    except NotImplementedError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 1
+
     return 0
 
 

@@ -1,2 +1,2 @@
-# Phase 1 uses the Python standard library only.
+# Phase 2 uses the Python standard library and the system ping command only.
 # Third-party packages will be added in later phases as needed.
