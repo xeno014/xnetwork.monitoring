@@ -1,0 +1,2 @@
+# Phase 1 uses the Python standard library only.
+# Third-party packages will be added in later phases as needed.

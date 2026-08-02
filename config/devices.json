@@ -1,0 +1,19 @@
+{
+    "devices": [
+        {
+            "name": "Router",
+            "ip": "192.168.1.1",
+            "enabled": true
+        },
+        {
+            "name": "Main Server",
+            "ip": "192.168.1.254",
+            "enabled": true
+        },
+        {
+            "name": "Piso Wifi Bluestucks",
+            "ip": "192.168.1.245",
+            "enabled": true
+        }
+    ]
+}
