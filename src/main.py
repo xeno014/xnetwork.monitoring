@@ -1,118 +1,123 @@
-"""XenoTech Network Monitor — Phase 2: Basic IP Monitoring Engine."""
+"""XenoTech IP Monitor — Phase 3 entry point.
+
+Modes:
+  python src/main.py              → Windows system tray (default on Windows)
+  python src/main.py --tray       → Force tray mode
+  python src/main.py --console    → Interactive console menu
+  python src/main.py continue|1   → Phase 2-compatible CONTINUE (foreground)
+  python src/main.py static|2     → Phase 2-compatible STATIC
+  python src/main.py scanner|3    → IP Scanner
+  python src/main.py add|4        → Add Device
+"""
 
 from __future__ import annotations
 
 import sys
 
-from config_loader import get_enabled_devices, load_devices
-from monitor import run_monitoring_loop, run_static_mode
+from app_logger import log_event
+from config_loader import get_enabled_devices, load_devices, load_settings
+from engine import ENGINE
+from paths import now_stamp
 
-# Seconds between each full monitoring cycle in CONTINUE_MODE.
-CHECK_INTERVAL = 5
 
-# User-facing aliases → canonical mode name.
 MODE_ALIASES = {
     "continue": "continue",
     "1": "continue",
     "static": "static",
     "2": "static",
+    "scanner": "scanner",
+    "ip scanner": "scanner",
+    "3": "scanner",
+    "add": "add",
+    "add device": "add",
+    "4": "add",
+    "console": "console",
+    "tray": "tray",
 }
 
 
 def normalize_mode(raw: str) -> str | None:
-    """Map a user mode string to ``continue`` or ``static``.
-
-    Accepts case-insensitive names and numeric shortcuts ``1`` / ``2``.
-    Returns None when the value is not recognized.
-    """
-    key = raw.strip().lower()
-    return MODE_ALIASES.get(key)
+    return MODE_ALIASES.get(raw.strip().lower())
 
 
-def prompt_mode(argv: list[str]) -> str | None:
-    """Resolve monitoring mode from CLI args or an interactive prompt.
-
-    Interactive invalid input is rejected with a clear message and the
-    user is asked again. Ctrl+C / EOF during the prompt exits cleanly
-    via KeyboardInterrupt / EOFError to the caller.
-    """
-    if len(argv) > 1:
-        mode = normalize_mode(argv[1])
-        if mode is not None:
-            return mode
-        print(
-            f'Unknown mode "{argv[1]}". '
-            'Use "continue"/"1" or "static"/"2".',
-            file=sys.stderr,
-        )
-        # Fall through to interactive selection so the user can recover.
-        print()
-
-    print("Select monitoring mode:")
-    print(
-        f"  1 / continue  - Automatic checks every {CHECK_INTERVAL} seconds"
-    )
-    print("  2 / static    - One check now; Ctrl+T to test again")
-    print()
-
-    while True:
-        raw = input("Mode: ").strip()
-        mode = normalize_mode(raw)
-        if mode is not None:
-            return mode
-        print(
-            f'Unknown mode "{raw}". '
-            'Please enter "continue"/"1" or "static"/"2".'
-        )
-        print()
-
-
-def display_banner(mode: str, device_count: int) -> None:
-    """Print the Phase 2 startup banner for the selected mode."""
-    print("XenoTech Network Monitor")
-    print("========================")
-    print(f"Mode: {mode.upper()}")
-    print()
-    if mode == "continue":
-        print(f"Monitoring {device_count} device(s)...")
-        print()
-
-
-def main(argv: list[str] | None = None) -> int:
-    """Load enabled devices and start the selected monitoring mode."""
-    if argv is None:
-        argv = sys.argv
-
+def bootstrap_engine() -> int:
+    """Load configuration into the shared engine. Returns exit code on failure."""
     try:
         devices = load_devices()
     except (FileNotFoundError, ValueError, OSError) as exc:
         print(f"Error loading configuration: {exc}", file=sys.stderr)
+        log_event(f"Configuration error: {exc}")
         return 1
 
     enabled = get_enabled_devices(devices)
     if not enabled:
-        print("No enabled devices found in configuration.", file=sys.stderr)
-        print('Set "enabled": true for at least one device in config/devices.json.')
+        print("No devices found in configuration.", file=sys.stderr)
         return 1
 
-    try:
-        mode = prompt_mode(argv)
-    except (EOFError, KeyboardInterrupt):
-        print()
-        print("Stopping XenoTech Network Monitor...")
-        print("Monitor stopped.")
+    ENGINE.reload_config()
+    return 0
+
+
+def run_legacy_or_menu(argv: list[str]) -> int:
+    """Console / Phase 2 compatible paths."""
+    from console_ui import (
+        run_add_device_flow,
+        run_console_session,
+        run_ip_scanner_ui,
+        run_monitoring_loop,
+        run_static_mode,
+    )
+
+    mode: str | None = None
+    if len(argv) > 1:
+        arg = argv[1].strip().lower()
+        if arg in {"--console", "console"}:
+            mode = "console"
+        elif arg in {"--tray", "tray"}:
+            mode = "tray"
+        else:
+            mode = normalize_mode(arg)
+            if mode is None:
+                print(
+                    f'Unknown mode "{argv[1]}". '
+                    "Use continue/1, static/2, scanner/3, add/4, --console, or --tray.",
+                    file=sys.stderr,
+                )
+                return 1
+
+    if mode == "tray":
+        from tray_app import run_tray_app
+
+        run_tray_app()
         return 0
 
-    if mode is None:
-        return 1
+    if mode in {None, "console"}:
+        try:
+            run_console_session()
+        except KeyboardInterrupt:
+            print()
+            print("Stopping XenoTech Network Monitor...")
+            print("Monitor stopped.")
+        return 0
 
-    display_banner(mode, len(enabled))
+    devices = ENGINE.get_devices()
+    settings = load_settings()
+    interval = settings["check_interval_seconds"]
+
+    print("XenoTech Network Monitor")
+    print("========================")
+    print(f"Mode: {mode.upper()}")
+    print()
 
     try:
-        if mode == "static":
-            run_static_mode(enabled)
-        else:
-            run_monitoring_loop(enabled, CHECK_INTERVAL)
+        if mode == "continue":
+            run_monitoring_loop(devices, interval)
+        elif mode == "static":
+            run_static_mode(devices)
+        elif mode == "scanner":
+            run_ip_scanner_ui()
+        elif mode == "add":
+            run_add_device_flow()
     except KeyboardInterrupt:
         print()
         print("Stopping XenoTech Network Monitor...")
@@ -123,6 +128,33 @@ def main(argv: list[str] | None = None) -> int:
         return 1
 
     return 0
+
+
+def main(argv: list[str] | None = None) -> int:
+    if argv is None:
+        argv = sys.argv
+
+    log_event(f"Application startup at {now_stamp()}")
+    code = bootstrap_engine()
+    if code != 0:
+        return code
+
+    # Default on Windows with no args: tray mode (no lingering console required).
+    if len(argv) == 1 and sys.platform == "win32":
+        try:
+            from tray_app import run_tray_app
+
+            run_tray_app()
+            log_event(f"Application shutdown at {now_stamp()}")
+            return 0
+        except SystemExit as exc:
+            # Fall back to console if tray deps missing.
+            print(str(exc), file=sys.stderr)
+            print("Falling back to console mode...", file=sys.stderr)
+
+    result = run_legacy_or_menu(argv)
+    log_event(f"Application shutdown at {now_stamp()}")
+    return result
 
 
 if __name__ == "__main__":
