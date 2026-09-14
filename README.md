@@ -1,213 +1,200 @@
-# XenoTech Network Monitor
+# XenoTech IP Monitor
 
-Monitor specific IP addresses on a local network and detect whether devices are **ONLINE** or **OFFLINE**.
+Windows-only local network monitor for configured IP addresses (**ONLINE** / **OFFLINE**), with LAN IP/MAC discovery, Discord status-change alerts, and a system tray presence.
 
 ## Current Phase
 
-**Phase 2 — Basic IP Monitoring Engine**
+**Phase 3 — System Tray + Multi-Device Monitoring + LAN IP/MAC Scanner**
 
-The application loads devices from configuration and supports two monitoring modes:
+Phase 1 (foundation) and Phase 2 (Continue / Static monitoring) behavior is preserved and extended.
 
-- **static** — one check immediately, then wait for **Ctrl+T** to test again
-- **continue** — automatic checks every `CHECK_INTERVAL` seconds (default **5**)
+## Requirements
 
-## Project Structure
+- Windows 10 / 11
+- Python 3.10+ recommended (project developed on Python 3.14)
+- System `ping` and `arp` commands
 
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
 ```
-XenoTech-Network-Monitor/
-├── src/
-│   ├── __init__.py
-│   ├── main.py            # Application entry point / mode selection
-│   ├── config_loader.py   # Load and validate devices.json
-│   ├── monitor.py         # Ping checks, STATIC_MODE, CONTINUE_MODE
-│   └── keyboard_input.py  # Windows Ctrl+T / Ctrl+C for STATIC_MODE
-├── config/
-│   └── devices.json       # Device list (name, IP, enabled)
-├── logs/
-│   └── .gitkeep           # Reserved for future log files
-├── tests/
-│   └── __init__.py
-├── .gitignore
-├── README.md
-└── requirements.txt
+
+Exact packages:
+
+```bash
+pip install "pystray>=0.19.5" "Pillow>=10.0.0"
 ```
+
+`pystray` + `Pillow` are used only for the Windows system tray icon/menu. Monitoring, scanning, Discord, and config I/O use the standard library.
 
 ## How to Run
 
-Requires **Python 3**. Phase 2 uses only the Python standard library and the system `ping` command — no third-party packages.
-
-From the project root:
+### Normal operation (system tray, no lingering CMD)
 
 ```bash
-python src/main.py
+pythonw src/main.py
 ```
 
-On Windows, if `python` is not on your PATH, use the launcher instead:
+or:
 
 ```bash
-py -3 src/main.py
+python src/main.py --tray
 ```
 
-You will be prompted to choose a mode. Accepted values (case-insensitive):
+- Tray icon appears
+- Background monitoring can start automatically (`start_monitoring_on_launch` in settings)
+- Double-click the tray icon (or **Open Console**) to view the console
+- Closing the console does **not** stop monitoring
+- Choose **Exit** in the tray menu to stop everything
 
-| Mode | Aliases |
-|------|---------|
-| CONTINUE | `continue`, `1` |
-| STATIC | `static`, `2` |
-
-Invalid interactive input shows a clear message and asks again.
-
-You can also pass the mode directly:
+### Development / console menu
 
 ```bash
-py -3 src/main.py continue
-py -3 src/main.py 1
-py -3 src/main.py static
-py -3 src/main.py 2
+python src/main.py --console
 ```
 
-**STATIC_MODE does not automatically repeat** — after each check it waits for **Ctrl+T** (test again) or **Ctrl+C** (exit).
+### Direct modes (Phase 2 compatible)
 
-### STATIC_MODE example
-
-```
-XenoTech Network Monitor
-========================
-Mode: STATIC
-
-[18:55:01] Router                 192.168.1.1    ONLINE
-[18:55:01] Main Server            192.168.1.254  ONLINE
-[18:55:01] Piso Wifi Bluestucks   192.168.1.245  OFFLINE
-
-Static check complete.
-
-Press:
-[Ctrl+T] Test again
-[Ctrl+C] Exit
+```bash
+python src/main.py continue
+python src/main.py static
+python src/main.py scanner
+python src/main.py add
 ```
 
-- **Ctrl+T** — run exactly one new check, then wait again
-- **Ctrl+C** — exit cleanly
+Numeric shortcuts: `1` Continue, `2` Static, `3` IP Scanner, `4` Add Device.
 
-### CONTINUE_MODE example
-
-```
-XenoTech Network Monitor
-========================
-Mode: CONTINUE
-
-Monitoring 3 device(s)...
-
-[18:30:01] Router                 192.168.1.1    ONLINE
-[18:30:01] Main Server            192.168.1.254  ONLINE
-[18:30:01] Piso Wifi Bluestucks   192.168.1.245  OFFLINE
-
-[18:30:06] Router                 192.168.1.1    ONLINE
-...
-```
-
-Press **Ctrl+C** to stop. Ctrl+T is not used in CONTINUE_MODE.
+## Console Menu
 
 ```
-Stopping XenoTech Network Monitor...
-Monitor stopped.
+================================================
+XenoTech IP Monitor
+===================
+
+1. Continue
+2. Static
+3. IP Scanner
+4. Add Device
+
+Ctrl + N = Add Device
+Ctrl + T = Test Again
+Ctrl + C = Exit Console
+=======================
 ```
 
-## How IP Monitoring Works
+| Shortcut | Action |
+|----------|--------|
+| **Ctrl+T** | One additional static/manual check |
+| **Ctrl+N** | Add Device flow |
+| **Ctrl+C** | Leave console view (tray app keeps running) |
 
-1. `config_loader.py` reads and validates `config/devices.json`.
-2. Only devices with `"enabled": true` are monitored.
-3. `monitor.py` runs a system ping (Windows: `ping -n 1 -w 2000`) for each IP.
-4. Reachable hosts print as **ONLINE**; unreachable (or timed-out) hosts print as **OFFLINE**.
-5. Mode controls *when* checks run:
-   - **static** (`2`) — one check, then wait; each **Ctrl+T** triggers exactly one new cycle (no 5-second auto loop)
-   - **continue** (`1`) — automatic every `CHECK_INTERVAL` seconds (default **5**)
+## Continue Mode
 
-### Current Phase 2 limitations
+- Immediate first check
+- Repeats every **5 seconds** (configurable)
+- Each device keeps an independent status (`UNKNOWN` / `ONLINE` / `OFFLINE`)
+- Discord alerts only on **status changes**, not every poll
 
-- ICMP ping only (hosts that block ping may look OFFLINE)
-- No retries / failure thresholds before marking OFFLINE
-- No status-change detection or notifications
-- STATIC_MODE Ctrl+T input is implemented for **Windows** (`keyboard_input.py`)
+## Static Mode
 
-Future phases may add Discord alerts, persistence, APIs, and dashboards.
+- One check of all configured devices
+- Does **not** auto-repeat
+- **Ctrl+T** runs exactly one more check
+- **Ctrl+C** returns to the menu / closes console cleanly
 
-## Configuring Devices
+## IP Scanner
 
-Edit `config/devices.json`. **Replace the example IP addresses with devices that exist on your own network.** Addresses such as `192.168.1.1` are common router defaults, but they are not guaranteed to exist on every LAN.
+- Detects the Windows host’s local subnet automatically when possible
+- Scans for up to **60 seconds**
+- Displays **IP Address** and **MAC Address** only (no hostnames)
+- Does **not** auto-add devices to monitoring
+- Use **Add Device** / **Ctrl+N** to monitor a discovered IP
+
+## Add Device (Ctrl+N)
+
+1. Enter name + IPv4
+2. Validate (empty / invalid / duplicates / config integrity)
+3. Confirmation screen `[Y/N]`
+4. Final validation
+5. Atomic JSON write (temp file + replace)
+6. Reload runtime device list (no restart)
+
+## Configuration
+
+### Devices — `config/devices.json`
 
 ```json
 {
     "devices": [
-        {
-            "name": "Router",
-            "ip": "192.168.1.1",
-            "enabled": true
-        },
-        {
-            "name": "Main Server",
-            "ip": "192.168.1.254",
-            "enabled": true
-        },
-        {
-            "name": "Piso Wifi Bluestucks",
-            "ip": "192.168.1.245",
-            "enabled": true
-        }
+        {"name": "My Device (XenoTech)", "ip": "192.168.1.192"},
+        {"name": "Main Server", "ip": "192.168.1.254"},
+        {"name": "PisoWifi Bluestuck", "ip": "192.168.1.245"},
+        {"name": "XenoRoom Wifi", "ip": "192.168.1.191"}
     ]
 }
 ```
 
-| Field     | Type    | Description                                      |
-|-----------|---------|--------------------------------------------------|
-| `name`    | string  | Friendly label for the device                    |
-| `ip`      | string  | IPv4 address on the local network                |
-| `enabled` | boolean | If `true`, the device is included in monitoring  |
+### Settings — `config/settings.local.json` (gitignored)
 
-Set `"enabled": false` to keep a device in the file without monitoring it.
+Copy the example and edit locally:
 
-Devices are **not** hardcoded in the application.
-
-## Changing the Monitoring Interval (CONTINUE_MODE)
-
-Open `src/main.py` and change:
-
-```python
-CHECK_INTERVAL = 5
+```bash
+copy config\settings.example.json config\settings.local.json
 ```
 
-The value is in **seconds**. For example, `CHECK_INTERVAL = 10` checks every 10 seconds. This setting does not affect STATIC_MODE.
+```json
+{
+    "discord_webhook_url": "https://discord.com/api/webhooks/...",
+    "check_interval_seconds": 5,
+    "scanner_duration_seconds": 60,
+    "start_monitoring_on_launch": true
+}
+```
 
-## Stopping the Application
+**Never commit** `settings.local.json`. The webhook URL is never printed or logged.
 
-Press **Ctrl+C** in either mode. The monitor prints a short shutdown message and exits cleanly.
+## Windows Startup
 
-## Testing Tips
+From the tray menu:
 
-Use IPs from **your** network:
+- **Enable Windows Startup** — per-user `HKCU\...\Run` entry (no admin)
+- **Disable Windows Startup** — removes the entry
 
-1. **Reachable** — your router or another online host on the LAN.
-2. **Unreachable** — an unused address on your subnet (for example `192.168.1.250` if nothing uses it).
-3. **Multiple devices** — enable two or more entries in `devices.json`.
-4. **Disabled device** — set `"enabled": false` and confirm it does not appear in output.
-5. **STATIC_MODE** — confirm one check on start, wait, Ctrl+T for one more check, Ctrl+C to exit.
-6. **CONTINUE_MODE** — confirm automatic checks every 5 seconds and Ctrl+C stop.
-7. **Invalid config** — break JSON temporarily and confirm the app exits with an error instead of crashing mid-loop.
+Normal startup: Windows login → app launches with `pythonw` → tray icon → background monitoring → no visible CMD.
 
-## Intentionally Not Implemented Yet
+## Project Structure
 
-The following belong to future phases and are **not** part of Phase 2:
+```
+src/
+  main.py              Entry point
+  engine.py            Single shared monitoring engine
+  monitor.py           Ping / reachability
+  config_loader.py     Load/validate/save devices + settings
+  device_manager.py    Add Device validation + atomic save
+  scanner.py           LAN IP/MAC scanner
+  discord_notify.py    Discord webhook (status changes)
+  console_ui.py        Console menu / modes
+  tray_app.py          System tray
+  keyboard_input.py    Ctrl+T / Ctrl+N / Ctrl+C
+  startup.py           Per-user Windows startup
+  app_logger.py        Local file logging
+  paths.py             Shared paths / timestamps
+config/
+  devices.json
+  settings.example.json
+  settings.local.json   (local secrets, gitignored)
+logs/
+  monitor.log           (runtime)
+```
 
-- Discord / webhook notifications
-- Status-change detection (ONLINE → OFFLINE alerts)
-- Failure thresholds / retries before marking OFFLINE
-- Logging to files
-- Uptime statistics or historical reporting
-- Database / SQLite storage
-- FastAPI or any web API
-- Web dashboard
-- Authentication
-- Windows service installation
+## Intentionally Out of Scope (Phase 3+)
+
+- AdoPisoFi-side / remote agents / SSH / tunneling
+- Web dashboard / database / cloud / mobile
+- Authentication / advanced analytics
+
+All monitoring and scanning runs **only on the Windows PC**. Monitored devices are never modified or installed upon.
 
 ## License
 

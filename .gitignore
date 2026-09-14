@@ -13,6 +13,7 @@ ENV/
 # Environment / secrets
 .env
 .env.*
+config/settings.local.json
 
 # Distribution / packaging
 build/

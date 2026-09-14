@@ -1,0 +1,6 @@
+{
+    "discord_webhook_url": "https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN",
+    "check_interval_seconds": 5,
+    "scanner_duration_seconds": 60,
+    "start_monitoring_on_launch": true
+}
