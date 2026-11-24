@@ -1,0 +1,6 @@
+# Phase 3 dependencies (Windows system tray).
+# Core monitoring / scanner / Discord webhook use the Python standard library only.
+pystray>=0.19.5
+Pillow>=10.0.0
+# Discord slash-command bot (/status, /check, ...)
+discord.py>=2.4.0

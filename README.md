@@ -1,201 +1,173 @@
 # XenoTech IP Monitor
 
-Windows-only local network monitor for configured IP addresses (**ONLINE** / **OFFLINE**), with LAN IP/MAC discovery, Discord status-change alerts, and a system tray presence.
+A Windows desktop app that watches the devices on your local network, shows whether each one is **ONLINE** or **OFFLINE**, scans your LAN for IP/MAC addresses, sends Discord alerts when a device changes state, and can be controlled remotely from Discord with slash commands.
 
-## Current Phase
+Everything runs on your own PC. Monitored devices are never modified and nothing is installed on them.
 
-**Phase 3 — System Tray + Multi-Device Monitoring + LAN IP/MAC Scanner**
+## Features
 
-Phase 1 (foundation) and Phase 2 (Continue / Static monitoring) behavior is preserved and extended.
+- **Desktop GUI** with live device status, summary cards, and color-coded rows
+- **Continuous monitoring** (configurable interval) or a one-off **Check Now**
+- **IP Scanner**: discovers IP and MAC addresses on your subnet and lets you add a result to monitoring with a double-click
+- **Add / remove devices** from the window (validated, atomic saves)
+- **Discord webhook alerts** on real status changes only (no spam on every poll)
+- **Discord slash commands** to check your network without touching the PC
+- **System tray**: closing the window hides it to the tray; tray notifications when a device goes offline or comes back
+- **Run at Windows startup** (per user, no admin rights needed)
+- **Single `.exe` build** with one script
+- Single-instance protection so you never get duplicate alerts
 
 ## Requirements
 
 - Windows 10 / 11
-- Python 3.10+ recommended (project developed on Python 3.14)
-- System `ping` and `arp` commands
+- Python 3.10+ (developed on 3.14) to run from source or build the exe
+- Uses the built-in `ping` and `arp` commands, so **no admin rights and no Npcap** are needed
 
-### Install dependencies
+## Quick start
+
+### Option A: build the exe
+
+1. Install Python from python.org and tick **Add python.exe to PATH**.
+2. Double-click `build_exe.bat`.
+3. Your app is at `dist\XenoTechIPMonitor.exe`.
+
+Put the exe in a normal user folder (Desktop, Documents), not Program Files. On first run it creates `config\` and `logs\` next to itself.
+
+If Windows Defender flags the exe, that is a common false positive with PyInstaller builds; add an exclusion for it.
+
+### Option B: run from source
 
 ```bash
 pip install -r requirements.txt
+python src/main.py
 ```
 
-Exact packages:
+## Using the app
+
+| Tab | What it does |
+|-----|--------------|
+| **Devices** | Live status of every monitored device. Start/Stop monitoring, Check Now, Add Device, Remove Selected |
+| **IP Scanner** | Scans your subnet for IP and MAC addresses. Select a result and add it to monitoring |
+| **Activity Log** | Live status changes and events. Button to open the log file |
+| **Settings** | Check interval, scan duration, Discord webhook, Discord bot, auto-start options, Windows startup |
+
+Closing the window hides the app to the system tray and monitoring keeps running. Right-click the tray icon and choose **Exit** to quit completely.
+
+### Command-line modes
 
 ```bash
-pip install "pystray>=0.19.5" "Pillow>=10.0.0"
+python src/main.py               # GUI (default on Windows)
+python src/main.py --gui         # force the GUI
+python src/main.py --minimized   # GUI, hidden in the tray
+python src/main.py --console     # legacy console menu
+python src/main.py --tray        # legacy tray-only mode
+python src/main.py continue      # continuous monitoring in the terminal
+python src/main.py static        # one check
+python src/main.py scanner       # LAN scan
+python src/main.py add           # add a device
 ```
-
-`pystray` + `Pillow` are used only for the Windows system tray icon/menu. Monitoring, scanning, Discord, and config I/O use the standard library.
-
-## How to Run
-
-### Normal operation (system tray, no lingering CMD)
-
-```bash
-pythonw src/main.py
-```
-
-or:
-
-```bash
-python src/main.py --tray
-```
-
-- Tray icon appears
-- Background monitoring can start automatically (`start_monitoring_on_launch` in settings)
-- Double-click the tray icon (or **Open Console**) to view the console
-- Closing the console does **not** stop monitoring
-- Choose **Exit** in the tray menu to stop everything
-
-### Development / console menu
-
-```bash
-python src/main.py --console
-```
-
-### Direct modes (Phase 2 compatible)
-
-```bash
-python src/main.py continue
-python src/main.py static
-python src/main.py scanner
-python src/main.py add
-```
-
-Numeric shortcuts: `1` Continue, `2` Static, `3` IP Scanner, `4` Add Device.
-
-## Console Menu
-
-```
-================================================
-XenoTech IP Monitor
-===================
-
-1. Continue
-2. Static
-3. IP Scanner
-4. Add Device
-
-Ctrl + N = Add Device
-Ctrl + T = Test Again
-Ctrl + C = Exit Console
-=======================
-```
-
-| Shortcut | Action |
-|----------|--------|
-| **Ctrl+T** | One additional static/manual check |
-| **Ctrl+N** | Add Device flow |
-| **Ctrl+C** | Leave console view (tray app keeps running) |
-
-## Continue Mode
-
-- Immediate first check
-- Repeats every **5 seconds** (configurable)
-- Each device keeps an independent status (`UNKNOWN` / `ONLINE` / `OFFLINE`)
-- Discord alerts only on **status changes**, not every poll
-
-## Static Mode
-
-- One check of all configured devices
-- Does **not** auto-repeat
-- **Ctrl+T** runs exactly one more check
-- **Ctrl+C** returns to the menu / closes console cleanly
-
-## IP Scanner
-
-- Detects the Windows host’s local subnet automatically when possible
-- Scans for up to **60 seconds**
-- Displays **IP Address** and **MAC Address** only (no hostnames)
-- Does **not** auto-add devices to monitoring
-- Use **Add Device** / **Ctrl+N** to monitor a discovered IP
-
-## Add Device (Ctrl+N)
-
-1. Enter name + IPv4
-2. Validate (empty / invalid / duplicates / config integrity)
-3. Confirmation screen `[Y/N]`
-4. Final validation
-5. Atomic JSON write (temp file + replace)
-6. Reload runtime device list (no restart)
 
 ## Configuration
 
-### Devices — `config/devices.json`
+### Devices: `config/devices.json`
 
 ```json
 {
     "devices": [
-        {"name": "My Device (XenoTech)", "ip": "192.168.1.192"},
         {"name": "Main Server", "ip": "192.168.1.254"},
-        {"name": "PisoWifi Bluestuck", "ip": "192.168.1.245"},
-        {"name": "XenoRoom Wifi", "ip": "192.168.1.191"}
+        {"name": "PLDT Router", "ip": "192.168.1.1"}
     ]
 }
 ```
 
-### Settings — `config/settings.local.json` (gitignored)
+You can edit this by hand or use the **Add Device** / **Remove Selected** buttons. Names and IPs must be unique, and IPs must be valid IPv4.
 
-Copy the example and edit locally:
+### Settings: `config/settings.local.json` (gitignored)
 
-```bash
-copy config\settings.example.json config\settings.local.json
-```
+Normally you edit these in the **Settings** tab. To set them by hand, copy `config/settings.example.json` to `config/settings.local.json`:
 
 ```json
 {
     "discord_webhook_url": "https://discord.com/api/webhooks/...",
     "check_interval_seconds": 5,
     "scanner_duration_seconds": 60,
-    "start_monitoring_on_launch": true
+    "start_monitoring_on_launch": true,
+    "discord_bot_token": "",
+    "discord_allowed_user_ids": [],
+    "discord_guild_id": 0
 }
 ```
 
-**Never commit** `settings.local.json`. The webhook URL is never printed or logged.
+**Never commit `settings.local.json`.** It holds your webhook URL and bot token. The app never prints or logs either one.
 
-## Windows Startup
+## Discord alerts (webhook)
 
-From the tray menu:
+Paste a webhook URL in **Settings > Discord webhook URL** (Discord: Channel settings > Integrations > Webhooks). The app posts a message only when a device's status actually changes.
 
-- **Enable Windows Startup** — per-user `HKCU\...\Run` entry (no admin)
-- **Disable Windows Startup** — removes the entry
+## Discord slash commands (remote control)
 
-Normal startup: Windows login → app launches with `pythonw` → tray icon → background monitoring → no visible CMD.
+The bot connects **out** to Discord, so you do not need to open any ports on your router.
 
-## Project Structure
+| Command | Action |
+|---------|--------|
+| `/status` | Show every device and whether it is online |
+| `/check` | Ping all devices right now and show the results |
+| `/ping <ip>` | Ping a single IPv4 address |
+| `/scan` | Scan the LAN and list IP and MAC addresses |
+| `/start` | Start continuous monitoring |
+| `/stop` | Stop continuous monitoring |
+
+Replies are private to you. Only Discord user IDs listed in settings can use the commands; with no IDs set, the bot refuses everything.
+
+### Setup
+
+1. Go to [discord.com/developers/applications](https://discord.com/developers/applications) and click **New Application**.
+2. Open **Bot**, click **Reset Token**, then **Copy**. The token is shown only once.
+3. Open **OAuth2 > URL Generator**, tick the scopes `bot` and `applications.commands`, and open the generated URL to invite the bot to your server.
+4. In Discord, enable Developer Mode (Settings > Advanced), then right-click your name and choose **Copy User ID**.
+5. In the app, open **Settings**, paste the token and your user ID (comma-separate extra users), and click **Save Settings**.
+6. Optional: add your **Server ID** so the commands appear instantly instead of after a delay.
+
+The PC and the app must be running for the bot to answer. If the token ever leaks, click **Reset Token** again and the old one stops working.
+
+## Project structure
 
 ```
 src/
-  main.py              Entry point
-  engine.py            Single shared monitoring engine
-  monitor.py           Ping / reachability
-  config_loader.py     Load/validate/save devices + settings
-  device_manager.py    Add Device validation + atomic save
-  scanner.py           LAN IP/MAC scanner
-  discord_notify.py    Discord webhook (status changes)
-  console_ui.py        Console menu / modes
-  tray_app.py          System tray
-  keyboard_input.py    Ctrl+T / Ctrl+N / Ctrl+C
-  startup.py           Per-user Windows startup
-  app_logger.py        Local file logging
-  paths.py             Shared paths / timestamps
+  main.py            Entry point and mode selection
+  gui_app.py         Desktop window (Tkinter) and tray integration
+  engine.py          Shared monitoring engine (one loop for everything)
+  monitor.py         Ping / reachability checks
+  scanner.py         LAN IP/MAC scanner
+  discord_notify.py  Discord webhook alerts (status changes)
+  discord_bot.py     Discord slash-command bot
+  device_manager.py  Add-device validation and atomic save
+  config_loader.py   Load/validate/save devices and settings
+  startup.py         Per-user Windows startup entry
+  tray_app.py        Legacy tray-only mode
+  console_ui.py      Legacy console menu
+  keyboard_input.py  Console shortcuts
+  app_logger.py      Local file logging
+  paths.py           Shared paths (exe-aware)
+assets/
+  xenotech.ico       App icon
 config/
   devices.json
   settings.example.json
-  settings.local.json   (local secrets, gitignored)
+  settings.local.json   (your secrets, gitignored)
 logs/
-  monitor.log           (runtime)
+  monitor.log           (created at runtime)
+build_exe.bat        One-click exe build (PyInstaller)
+requirements.txt
 ```
 
-## Intentionally Out of Scope (Phase 3+)
+## Notes and limits
 
-- AdoPisoFi-side / remote agents / SSH / tunneling
-- Web dashboard / database / cloud / mobile
-- Authentication / advanced analytics
-
-All monitoring and scanning runs **only on the Windows PC**. Monitored devices are never modified or installed upon.
+- Windows only; monitoring and scanning run only on the PC where the app runs.
+- Checks use ICMP ping, so a device that blocks ping will show as OFFLINE.
+- The scanner covers the PC's local subnet (up to 1024 hosts) and does not resolve hostnames.
+- Out of scope: remote agents, web dashboard, database, cloud, authentication.
 
 ## License
 
-Proprietary — XenoTech.
+Proprietary, XenoTech.

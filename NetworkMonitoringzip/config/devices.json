@@ -1,0 +1,24 @@
+{
+    "devices": [
+        {
+            "name": "My Device (XenoTech)",
+            "ip": "192.168.1.192"
+        },
+        {
+            "name": "Main Server",
+            "ip": "192.168.1.254"
+        },
+        {
+            "name": "PisoWifi Bluestuck",
+            "ip": "192.168.1.33"
+        },
+        {
+            "name": "XenoRoom Wifi",
+            "ip": "192.168.1.191"
+        },
+        {
+            "name": "PLDT Router",
+            "ip": "192.168.1.1"
+        }
+    ]
+}

@@ -1,0 +1,1061 @@
+[2026-08-02 23:24:48] Configuration loaded: 4 device(s)
+[2026-08-02 23:24:50] Configuration loaded: 4 device(s)
+[2026-08-02 23:24:50] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:24:50] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:24:50] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:24:50] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:24:50] Configuration loaded: 5 device(s)
+[2026-08-02 23:24:50] Device created: Temp Review Host (192.0.2.99) at 2026-08-02 23:24:50
+[2026-08-02 23:24:50] Configuration loaded: 4 device(s)
+[2026-08-02 23:24:50] Monitoring started
+[2026-08-02 23:25:01] Monitoring stopped
+[2026-08-02 23:25:15] Configuration loaded: 4 device(s)
+[2026-08-02 23:25:16] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:25:16] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:25:16] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:25:16] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:25:16] Static check completed at 2026-08-02 23:25:16
+[2026-08-02 23:25:16] Static check completed at 2026-08-02 23:25:16
+[2026-08-02 23:25:16] Configuration loaded: 4 device(s)
+[2026-08-02 23:25:16] Application startup at 2026-08-02 23:25:16
+[2026-08-02 23:25:16] Configuration loaded: 4 device(s)
+[2026-08-02 23:25:16] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:25:16] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:25:16] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:25:16] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:25:31] Application shutdown at 2026-08-02 23:25:31
+[2026-08-02 23:25:31] IP scanner started at 2026-08-02 23:25:31
+[2026-08-02 23:25:34] IP scanner completed at 2026-08-02 23:25:34: 12 device(s) discovered
+[2026-08-02 23:25:34] Configuration loaded: 4 device(s)
+[2026-08-02 23:25:34] Windows startup enabled (HKCU Run)
+[2026-08-02 23:25:34] Windows startup disabled
+[2026-08-02 23:25:34] Configuration loaded: 4 device(s)
+[2026-08-02 23:25:34] Device creation cancelled by user
+[2026-08-02 23:25:45] Configuration loaded: 4 device(s)
+[2026-08-02 23:25:45] Configuration loaded: 4 device(s)
+[2026-08-02 23:25:56] Configuration loaded: 4 device(s)
+[2026-08-02 23:25:56] Configuration loaded: 4 device(s)
+[2026-08-02 23:25:56] Status change: My Device (XenoTech) (192.168.1.192) ONLINE -> OFFLINE
+[2026-08-02 23:29:57] Configuration loaded: 4 device(s)
+[2026-08-02 23:29:57] Application startup at 2026-08-02 23:29:57
+[2026-08-02 23:29:57] Configuration loaded: 4 device(s)
+[2026-08-02 23:29:57] Tray application starting at 2026-08-02 23:29:57
+[2026-08-02 23:29:57] Monitoring started
+[2026-08-02 23:29:57] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:29:57] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:29:57] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:29:57] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:30:11] Windows startup enabled (HKCU Run)
+[2026-08-02 23:30:15] Console opened at 2026-08-02 23:30:15
+[2026-08-02 23:30:15] Console opened at 2026-08-02 23:30:15
+[2026-08-02 23:30:27] Configuration loaded: 4 device(s)
+[2026-08-02 23:30:27] Application startup at 2026-08-02 23:30:27
+[2026-08-02 23:30:27] Configuration loaded: 4 device(s)
+[2026-08-02 23:30:27] Tray application starting at 2026-08-02 23:30:27
+[2026-08-02 23:30:27] Monitoring started
+[2026-08-02 23:30:27] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:30:27] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:30:27] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:30:27] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:30:37] Console opened at 2026-08-02 23:30:37
+[2026-08-02 23:30:37] Console opened at 2026-08-02 23:30:37
+[2026-08-02 23:30:41] Console closed at 2026-08-02 23:30:41
+[2026-08-02 23:30:41] Console closed at 2026-08-02 23:30:41
+[2026-08-02 23:31:21] Configuration loaded: 4 device(s)
+[2026-08-02 23:31:21] Application startup at 2026-08-02 23:31:21
+[2026-08-02 23:31:21] Configuration loaded: 4 device(s)
+[2026-08-02 23:31:21] Tray application starting at 2026-08-02 23:31:21
+[2026-08-02 23:31:21] Monitoring started
+[2026-08-02 23:31:21] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:31:21] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:31:21] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:31:21] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:32:02] Tray: Static Check completed
+[2026-08-02 23:32:58] Configuration loaded: 4 device(s)
+[2026-08-02 23:32:58] Application startup at 2026-08-02 23:32:58
+[2026-08-02 23:32:58] Configuration loaded: 4 device(s)
+[2026-08-02 23:32:58] Tray application starting at 2026-08-02 23:32:58
+[2026-08-02 23:32:58] Monitoring started
+[2026-08-02 23:32:58] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:32:58] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:32:58] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:32:58] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:33:03] Console opened at 2026-08-02 23:33:03
+[2026-08-02 23:33:03] Console opened at 2026-08-02 23:33:03
+[2026-08-02 23:33:08] Console closed at 2026-08-02 23:33:08
+[2026-08-02 23:33:08] Console closed at 2026-08-02 23:33:08
+[2026-08-02 23:34:05] Console opened at 2026-08-02 23:34:05
+[2026-08-02 23:34:05] Console opened at 2026-08-02 23:34:05
+[2026-08-02 23:36:58] Configuration loaded: 4 device(s)
+[2026-08-02 23:36:58] Application startup at 2026-08-02 23:36:58
+[2026-08-02 23:36:58] Configuration loaded: 4 device(s)
+[2026-08-02 23:36:58] Tray application starting at 2026-08-02 23:36:58
+[2026-08-02 23:36:58] Monitoring started
+[2026-08-02 23:36:58] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:36:58] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:36:58] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:36:58] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:37:03] Console opened at 2026-08-02 23:37:03
+[2026-08-02 23:37:03] Console opened at 2026-08-02 23:37:03
+[2026-08-02 23:37:12] Console closed at 2026-08-02 23:37:12
+[2026-08-02 23:37:12] Console closed at 2026-08-02 23:37:12
+[2026-08-02 23:37:42] Configuration loaded: 4 device(s)
+[2026-08-02 23:38:24] Configuration loaded: 4 device(s)
+[2026-08-02 23:38:24] Application startup at 2026-08-02 23:38:24
+[2026-08-02 23:38:24] Configuration loaded: 4 device(s)
+[2026-08-02 23:38:24] Tray application starting at 2026-08-02 23:38:24
+[2026-08-02 23:38:24] Monitoring started
+[2026-08-02 23:38:24] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:38:24] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:38:24] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:38:24] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:38:29] Console opened at 2026-08-02 23:38:29
+[2026-08-02 23:38:29] Console opened at 2026-08-02 23:38:29
+[2026-08-02 23:38:36] Console closed at 2026-08-02 23:38:36
+[2026-08-02 23:38:36] Console closed at 2026-08-02 23:38:36
+[2026-08-02 23:38:55] Console opened at 2026-08-02 23:38:55
+[2026-08-02 23:38:55] Console opened at 2026-08-02 23:38:55
+[2026-08-02 23:39:02] Configuration loaded: 4 device(s)
+[2026-08-02 23:39:02] Application startup at 2026-08-02 23:39:02
+[2026-08-02 23:39:02] Configuration loaded: 4 device(s)
+[2026-08-02 23:39:02] Tray application starting at 2026-08-02 23:39:02
+[2026-08-02 23:39:02] Monitoring started
+[2026-08-02 23:39:02] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:39:02] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:39:02] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:39:02] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:39:08] Console opened at 2026-08-02 23:39:08
+[2026-08-02 23:39:08] Console opened at 2026-08-02 23:39:08
+[2026-08-02 23:39:25] IP scanner started at 2026-08-02 23:39:25
+[2026-08-02 23:39:27] IP scanner completed at 2026-08-02 23:39:27: 12 device(s) discovered
+[2026-08-02 23:39:53] Console closed at 2026-08-02 23:39:53
+[2026-08-02 23:39:53] Console closed at 2026-08-02 23:39:53
+[2026-08-02 23:40:11] Configuration loaded: 4 device(s)
+[2026-08-02 23:40:11] Application startup at 2026-08-02 23:40:11
+[2026-08-02 23:40:11] Configuration loaded: 4 device(s)
+[2026-08-02 23:40:11] Tray application starting at 2026-08-02 23:40:11
+[2026-08-02 23:40:11] Monitoring started
+[2026-08-02 23:40:11] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:40:11] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:40:11] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:40:11] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:40:16] Console opened at 2026-08-02 23:40:16
+[2026-08-02 23:40:16] Console opened at 2026-08-02 23:40:16
+[2026-08-02 23:40:34] Console closed at 2026-08-02 23:40:34
+[2026-08-02 23:40:34] Console closed at 2026-08-02 23:40:34
+[2026-08-02 23:43:49] Configuration loaded: 4 device(s)
+[2026-08-02 23:44:49] Configuration loaded: 4 device(s)
+[2026-08-02 23:44:49] Application startup at 2026-08-02 23:44:49
+[2026-08-02 23:44:49] Configuration loaded: 4 device(s)
+[2026-08-02 23:44:49] Tray application starting at 2026-08-02 23:44:49
+[2026-08-02 23:44:49] Monitoring started
+[2026-08-02 23:44:49] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:44:49] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:44:49] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:44:49] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:44:54] Console opened at 2026-08-02 23:44:54
+[2026-08-02 23:44:54] Console opened at 2026-08-02 23:44:54
+[2026-08-02 23:45:01] Configuration loaded: 4 device(s)
+[2026-08-02 23:45:01] Application startup at 2026-08-02 23:45:01
+[2026-08-02 23:45:01] Configuration loaded: 4 device(s)
+[2026-08-02 23:45:01] Tray application starting at 2026-08-02 23:45:01
+[2026-08-02 23:45:01] Monitoring started
+[2026-08-02 23:45:01] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:45:01] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:45:01] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:45:01] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:45:06] Configuration loaded: 4 device(s)
+[2026-08-02 23:45:06] Application startup at 2026-08-02 23:45:06
+[2026-08-02 23:45:06] Configuration loaded: 4 device(s)
+[2026-08-02 23:45:06] Tray application starting at 2026-08-02 23:45:06
+[2026-08-02 23:45:06] Monitoring started
+[2026-08-02 23:45:06] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:45:06] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:45:06] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:45:06] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:45:10] Console opened at 2026-08-02 23:45:10
+[2026-08-02 23:45:10] Console opened at 2026-08-02 23:45:10
+[2026-08-02 23:45:12] Console closed at 2026-08-02 23:45:12
+[2026-08-02 23:45:12] Console closed at 2026-08-02 23:45:12
+[2026-08-02 23:48:15] Configuration loaded: 4 device(s)
+[2026-08-02 23:48:15] Application startup at 2026-08-02 23:48:15
+[2026-08-02 23:48:15] Configuration loaded: 4 device(s)
+[2026-08-02 23:48:15] Tray application starting at 2026-08-02 23:48:15
+[2026-08-02 23:48:15] Monitoring started
+[2026-08-02 23:48:15] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:48:15] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:48:15] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:48:15] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:52:35] Configuration loaded: 4 device(s)
+[2026-08-02 23:52:45] Configuration loaded: 4 device(s)
+[2026-08-02 23:53:02] Configuration loaded: 4 device(s)
+[2026-08-02 23:53:15] Configuration loaded: 4 device(s)
+[2026-08-02 23:53:23] Configuration loaded: 4 device(s)
+[2026-08-02 23:55:43] Configuration loaded: 4 device(s)
+[2026-08-02 23:55:43] Application startup at 2026-08-02 23:55:43
+[2026-08-02 23:55:43] Configuration loaded: 4 device(s)
+[2026-08-02 23:55:43] Tray application starting at 2026-08-02 23:55:43
+[2026-08-02 23:55:43] Monitoring started
+[2026-08-02 23:55:43] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:55:43] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:55:43] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:55:43] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:55:51] Configuration loaded: 4 device(s)
+[2026-08-02 23:55:51] Application startup at 2026-08-02 23:55:51
+[2026-08-02 23:55:51] Configuration loaded: 4 device(s)
+[2026-08-02 23:55:51] Tray application starting at 2026-08-02 23:55:51
+[2026-08-02 23:55:51] Monitoring started
+[2026-08-02 23:55:51] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-02 23:55:51] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-02 23:55:51] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-02 23:55:51] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-02 23:56:01] Console created at 2026-08-02 23:56:01
+[2026-08-02 23:56:01] Console opened at 2026-08-02 23:56:01
+[2026-08-02 23:56:03] Console hidden at 2026-08-02 23:56:03 (tray/monitoring still running)
+[2026-08-02 23:56:03] Console closed at 2026-08-02 23:56:03
+[2026-08-02 23:56:03] Console UI session ended at 2026-08-02 23:56:03
+[2026-08-03 00:02:34] Configuration loaded: 4 device(s)
+[2026-08-03 00:02:34] Application startup at 2026-08-03 00:02:34
+[2026-08-03 00:02:34] Configuration loaded: 4 device(s)
+[2026-08-03 00:02:34] Tray application starting at 2026-08-03 00:02:34
+[2026-08-03 00:02:34] Monitoring started
+[2026-08-03 00:02:34] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-03 00:02:34] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-03 00:02:34] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-03 00:02:34] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-03 00:02:58] Console created at 2026-08-03 00:02:58
+[2026-08-03 00:02:58] Console opened at 2026-08-03 00:02:58
+[2026-08-03 00:03:06] IP scanner started at 2026-08-03 00:03:06
+[2026-08-03 00:03:08] IP scanner completed at 2026-08-03 00:03:08: 12 device(s) discovered
+[2026-08-03 00:03:43] Static check completed at 2026-08-03 00:03:43
+[2026-08-03 00:04:12] Configuration loaded: 5 device(s)
+[2026-08-03 00:04:12] Device created: PLDT Router (192.168.1.1) at 2026-08-03 00:04:12
+[2026-08-03 00:04:12] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-08-03 00:04:12] Static check completed at 2026-08-03 00:04:12
+[2026-08-03 00:04:19] Static check completed at 2026-08-03 00:04:19
+[2026-08-03 00:04:37] Console hidden at 2026-08-03 00:04:37 (tray/monitoring still running)
+[2026-08-03 00:08:23] Configuration loaded: 5 device(s)
+[2026-08-03 00:08:23] Application startup at 2026-08-03 00:08:23
+[2026-08-03 00:08:23] Configuration loaded: 5 device(s)
+[2026-08-03 00:08:24] Tray application starting at 2026-08-03 00:08:24
+[2026-08-03 00:08:24] Monitoring started
+[2026-08-03 00:08:24] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-03 00:08:24] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-03 00:08:24] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-03 00:08:24] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-03 00:08:24] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-08-03 00:08:48] Console created at 2026-08-03 00:08:48
+[2026-08-03 00:08:48] Console opened at 2026-08-03 00:08:48
+[2026-08-03 00:08:54] Console hidden at 2026-08-03 00:08:54 (tray/monitoring still running)
+[2026-08-03 00:08:54] Console closed at 2026-08-03 00:08:54
+[2026-08-03 00:08:54] Console UI session ended at 2026-08-03 00:08:54
+[2026-08-03 00:09:04] Tray: Static Check completed
+[2026-08-03 00:09:08] Console restored at 2026-08-03 00:09:08
+[2026-08-03 00:09:08] Console opened at 2026-08-03 00:09:08
+[2026-08-03 00:09:22] Static check completed at 2026-08-03 00:09:22
+[2026-08-03 00:09:33] Static check completed at 2026-08-03 00:09:33
+[2026-08-03 00:09:41] Console hidden at 2026-08-03 00:09:41 (tray/monitoring still running)
+[2026-08-03 00:09:41] Console hidden at 2026-08-03 00:09:41 (tray/monitoring still running)
+[2026-08-03 00:13:50] Console restored at 2026-08-03 00:13:50
+[2026-08-03 00:14:10] Static check completed at 2026-08-03 00:14:10
+[2026-08-03 00:14:10] Console closed at 2026-08-03 00:14:10
+[2026-08-03 00:14:10] Console hidden at 2026-08-03 00:14:10 (tray/monitoring still running)
+[2026-08-03 00:14:10] Console UI session ended at 2026-08-03 00:14:10
+[2026-08-03 00:14:15] Console restored at 2026-08-03 00:14:15
+[2026-08-03 00:14:15] Console opened at 2026-08-03 00:14:15
+[2026-08-03 00:14:24] IP scanner started at 2026-08-03 00:14:24
+[2026-08-03 00:14:27] IP scanner completed at 2026-08-03 00:14:27: 12 device(s) discovered
+[2026-08-03 00:14:45] Console closed at 2026-08-03 00:14:45
+[2026-08-03 00:15:27] Configuration loaded: 5 device(s)
+[2026-08-03 00:15:32] Configuration loaded: 5 device(s)
+[2026-08-03 00:15:32] Application startup at 2026-08-03 00:15:32
+[2026-08-03 00:15:32] Configuration loaded: 5 device(s)
+[2026-08-03 00:15:32] Tray application starting at 2026-08-03 00:15:32
+[2026-08-03 00:15:32] Monitoring started
+[2026-08-03 00:15:32] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-03 00:15:32] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-03 00:15:32] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-03 00:15:32] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-03 00:15:32] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-08-03 00:15:42] Console created at 2026-08-03 00:15:42
+[2026-08-03 00:15:42] Console opened at 2026-08-03 00:15:42
+[2026-08-03 00:15:44] Console hidden at 2026-08-03 00:15:44 (tray/monitoring still running)
+[2026-08-03 00:15:44] Console closed at 2026-08-03 00:15:44
+[2026-08-03 00:15:44] Console UI session ended at 2026-08-03 00:15:44
+[2026-08-03 00:43:30] Configuration loaded: 5 device(s)
+[2026-08-03 00:43:30] Application startup at 2026-08-03 00:43:30
+[2026-08-03 00:43:30] Configuration loaded: 5 device(s)
+[2026-08-03 00:43:31] Tray application starting at 2026-08-03 00:43:31
+[2026-08-03 00:43:31] Monitoring started
+[2026-08-03 00:43:31] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-03 00:43:31] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-03 00:43:31] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-03 00:43:31] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-03 00:43:31] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-08-03 00:45:26] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-08-03 00:45:31] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-08-03 07:28:05] Configuration loaded: 5 device(s)
+[2026-08-03 07:28:05] Application startup at 2026-08-03 07:28:05
+[2026-08-03 07:28:05] Configuration loaded: 5 device(s)
+[2026-08-03 07:28:06] Tray application starting at 2026-08-03 07:28:06
+[2026-08-03 07:28:06] Monitoring started
+[2026-08-03 07:28:06] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-03 07:28:06] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-03 07:28:06] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-03 07:28:06] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-03 07:28:06] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-08-03 18:36:36] Configuration loaded: 5 device(s)
+[2026-08-03 18:36:36] Application startup at 2026-08-03 18:36:36
+[2026-08-03 18:36:36] Configuration loaded: 5 device(s)
+[2026-08-03 18:36:36] Tray application starting at 2026-08-03 18:36:36
+[2026-08-03 18:36:36] Monitoring started
+[2026-08-03 18:36:37] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-08-03 18:36:37] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-08-03 18:36:37] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-08-03 18:36:37] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-08-03 18:36:37] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-08-03 18:37:43] Windows startup disabled
+[2026-08-03 18:37:46] Tray Exit requested at 2026-08-03 18:37:46
+[2026-08-03 18:37:46] Console destroyed at 2026-08-03 18:37:46
+[2026-08-03 18:37:46] Monitoring stopped
+[2026-08-03 18:37:46] Console destroyed at 2026-08-03 18:37:46
+[2026-08-03 18:37:46] Tray application stopped at 2026-08-03 18:37:46
+[2026-08-03 18:37:46] Application shutdown at 2026-08-03 18:37:46
+[2026-09-07 17:28:29] Configuration loaded: 5 device(s)
+[2026-09-07 17:28:29] Application startup at 2026-09-07 17:28:29
+[2026-09-07 17:28:29] Configuration loaded: 5 device(s)
+[2026-09-07 17:28:30] Tray application starting at 2026-09-07 17:28:30
+[2026-09-07 17:28:30] Monitoring started
+[2026-09-07 17:28:32] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-07 17:28:32] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-07 17:28:32] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> OFFLINE
+[2026-09-07 17:28:32] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-07 17:28:32] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-07 17:29:01] Configuration loaded: 5 device(s)
+[2026-09-07 17:29:14] Configuration loaded: 5 device(s)
+[2026-09-07 17:29:14] Application startup at 2026-09-07 17:29:14
+[2026-09-07 17:29:14] Configuration loaded: 5 device(s)
+[2026-09-07 17:29:14] Tray application starting at 2026-09-07 17:29:14
+[2026-09-07 17:29:14] Monitoring started
+[2026-09-07 17:29:16] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-07 17:29:16] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-07 17:29:16] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> OFFLINE
+[2026-09-07 17:29:16] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-07 17:29:16] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-11 20:01:24] Configuration loaded: 5 device(s)
+[2026-09-11 20:01:24] Application startup at 2026-09-11 20:01:24
+[2026-09-11 20:01:24] Configuration loaded: 5 device(s)
+[2026-09-11 20:01:24] Tray application starting at 2026-09-11 20:01:24
+[2026-09-11 20:01:24] Monitoring started
+[2026-09-11 20:01:26] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-11 20:01:26] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-11 20:01:26] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> OFFLINE
+[2026-09-11 20:01:26] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-11 20:01:26] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-11 20:04:11] Configuration loaded: 5 device(s)
+[2026-09-11 20:04:11] Application startup at 2026-09-11 20:04:11
+[2026-09-11 20:04:11] Configuration loaded: 5 device(s)
+[2026-09-11 20:04:11] Tray application starting at 2026-09-11 20:04:11
+[2026-09-11 20:04:11] Monitoring started
+[2026-09-11 20:04:13] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-11 20:04:13] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-11 20:04:13] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-09-11 20:04:13] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-11 20:04:13] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-11 20:04:20] Status change: PisoWifi Bluestuck (192.168.1.245) ONLINE -> OFFLINE
+[2026-09-11 20:04:36] Console created at 2026-09-11 20:04:36
+[2026-09-11 20:04:36] Console opened at 2026-09-11 20:04:36
+[2026-09-11 20:04:56] IP scanner started at 2026-09-11 20:04:56
+[2026-09-11 20:04:58] IP scanner completed at 2026-09-11 20:04:58: 21 device(s) discovered
+[2026-09-11 20:05:02] Status change: PisoWifi Bluestuck (192.168.1.245) OFFLINE -> ONLINE
+[2026-09-11 20:05:09] Status change: PisoWifi Bluestuck (192.168.1.245) ONLINE -> OFFLINE
+[2026-09-11 20:06:02] Console hidden at 2026-09-11 20:06:02 (tray/monitoring still running)
+[2026-09-11 20:10:08] Configuration loaded: 5 device(s)
+[2026-09-11 20:10:08] Application startup at 2026-09-11 20:10:08
+[2026-09-11 20:10:08] Configuration loaded: 5 device(s)
+[2026-09-11 20:10:09] Tray application starting at 2026-09-11 20:10:09
+[2026-09-11 20:10:09] Monitoring started
+[2026-09-11 20:10:10] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-11 20:10:10] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-11 20:10:10] Status change: PisoWifi Bluestuck (192.168.1.245) UNKNOWN -> ONLINE
+[2026-09-11 20:10:10] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-11 20:10:10] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-11 20:10:13] Windows startup enabled (HKCU Run)
+[2026-09-11 20:10:17] Status change: PisoWifi Bluestuck (192.168.1.245) ONLINE -> OFFLINE
+[2026-09-11 20:10:22] Console created at 2026-09-11 20:10:22
+[2026-09-11 20:10:22] Console opened at 2026-09-11 20:10:22
+[2026-09-11 20:12:32] Configuration loaded: 5 device(s)
+[2026-09-11 20:17:42] Configuration loaded: 5 device(s)
+[2026-09-11 20:17:42] Application startup at 2026-09-11 20:17:42
+[2026-09-11 20:17:42] Configuration loaded: 5 device(s)
+[2026-09-11 20:17:42] Tray application starting at 2026-09-11 20:17:42
+[2026-09-11 20:17:42] Monitoring started
+[2026-09-11 20:17:42] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-11 20:17:42] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-11 20:17:42] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> ONLINE
+[2026-09-11 20:17:42] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-11 20:17:42] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-11 20:21:18] Console created at 2026-09-11 20:21:18
+[2026-09-11 20:21:18] Console opened at 2026-09-11 20:21:18
+[2026-09-11 20:21:19] Console closed at 2026-09-11 20:21:19
+[2026-09-13 03:16:31] Configuration loaded: 5 device(s)
+[2026-09-13 03:16:31] Application startup at 2026-09-13 03:16:31
+[2026-09-13 03:16:31] Configuration loaded: 5 device(s)
+[2026-09-13 03:16:32] Tray application starting at 2026-09-13 03:16:32
+[2026-09-13 03:16:32] Monitoring started
+[2026-09-13 03:16:32] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-13 03:16:32] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-13 03:16:32] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> ONLINE
+[2026-09-13 03:16:32] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-13 03:16:32] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-13 11:49:12] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-13 11:49:17] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-13 22:54:00] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-13 22:54:05] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-13 22:59:15] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-13 22:59:20] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-13 23:34:47] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-13 23:34:52] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-13 23:39:13] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-13 23:39:18] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-14 18:11:43] Configuration loaded: 5 device(s)
+[2026-09-14 18:11:43] Application startup at 2026-09-14 18:11:43
+[2026-09-14 18:11:43] Configuration loaded: 5 device(s)
+[2026-09-14 18:11:44] Tray application starting at 2026-09-14 18:11:44
+[2026-09-14 18:11:44] Monitoring started
+[2026-09-14 18:11:44] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-14 18:11:44] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-14 18:11:44] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> ONLINE
+[2026-09-14 18:11:44] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-14 18:11:44] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-14 18:42:10] Status change: My Device (XenoTech) (192.168.1.192) ONLINE -> OFFLINE
+[2026-09-14 18:42:15] Status change: My Device (XenoTech) (192.168.1.192) OFFLINE -> ONLINE
+[2026-09-14 19:48:06] Configuration loaded: 5 device(s)
+[2026-09-14 19:48:06] Application startup at 2026-09-14 19:48:06
+[2026-09-14 19:48:06] Configuration loaded: 5 device(s)
+[2026-09-14 19:48:06] Tray application starting at 2026-09-14 19:48:06
+[2026-09-14 19:48:06] Monitoring started
+[2026-09-14 19:48:07] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-14 19:48:07] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-14 19:48:07] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> ONLINE
+[2026-09-14 19:48:07] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-14 19:48:07] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-14 19:49:07] Tray Exit requested at 2026-09-14 19:49:07
+[2026-09-14 19:49:07] Console destroyed at 2026-09-14 19:49:07
+[2026-09-14 19:49:07] Monitoring stopped
+[2026-09-14 19:49:07] Console destroyed at 2026-09-14 19:49:07
+[2026-09-14 19:49:07] Tray application stopped at 2026-09-14 19:49:07
+[2026-09-14 19:49:07] Application shutdown at 2026-09-14 19:49:07
+[2026-09-14 19:49:10] Console created at 2026-09-14 19:49:10
+[2026-09-14 19:49:10] Console opened at 2026-09-14 19:49:10
+[2026-09-14 19:49:13] Console closed at 2026-09-14 19:49:13
+[2026-09-14 19:49:13] Console hidden at 2026-09-14 19:49:13 (tray/monitoring still running)
+[2026-09-14 19:49:13] Console UI session ended at 2026-09-14 19:49:13
+[2026-09-14 19:50:19] Tray: Static Check completed
+[2026-09-14 19:50:27] Console restored at 2026-09-14 19:50:27
+[2026-09-14 19:50:27] Console opened at 2026-09-14 19:50:27
+[2026-09-14 19:50:53] Console hidden at 2026-09-14 19:50:53 (tray/monitoring still running)
+[2026-09-14 19:50:53] Console closed at 2026-09-14 19:50:53
+[2026-09-14 19:50:53] Console UI session ended at 2026-09-14 19:50:53
+[2026-09-14 19:53:08] Monitoring stopped
+[2026-09-14 19:53:12] Monitoring started
+[2026-09-14 19:53:21] Monitoring stopped
+[2026-09-14 19:53:31] Monitoring started
+[2026-09-14 19:53:36] Console restored at 2026-09-14 19:53:36
+[2026-09-14 19:53:36] Console opened at 2026-09-14 19:53:36
+[2026-09-14 19:53:48] IP scanner started at 2026-09-14 19:53:48
+[2026-09-14 19:53:50] IP scanner completed at 2026-09-14 19:53:50: 16 device(s) discovered
+[2026-09-14 19:54:09] Console closed at 2026-09-14 19:54:09
+[2026-09-14 19:54:19] Configuration loaded: 5 device(s)
+[2026-09-14 19:54:19] Application startup at 2026-09-14 19:54:19
+[2026-09-14 19:54:19] Configuration loaded: 5 device(s)
+[2026-09-14 19:54:19] Tray application starting at 2026-09-14 19:54:19
+[2026-09-14 19:54:19] Monitoring started
+[2026-09-14 19:54:19] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-14 19:54:19] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-14 19:54:19] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> ONLINE
+[2026-09-14 19:54:19] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-14 19:54:19] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-14 19:57:44] Console created at 2026-09-14 19:57:44
+[2026-09-14 19:57:44] Console opened at 2026-09-14 19:57:44
+[2026-09-14 19:57:46] Console closed at 2026-09-14 19:57:46
+[2026-09-14 19:57:46] Console hidden at 2026-09-14 19:57:46 (tray/monitoring still running)
+[2026-09-14 19:57:46] Console UI session ended at 2026-09-14 19:57:46
+[2026-09-14 20:00:18] Console restored at 2026-09-14 20:00:18
+[2026-09-14 20:00:18] Console opened at 2026-09-14 20:00:18
+[2026-09-14 20:00:21] IP scanner started at 2026-09-14 20:00:21
+[2026-09-14 20:00:23] IP scanner completed at 2026-09-14 20:00:23: 16 device(s) discovered
+[2026-09-14 20:01:10] Console hidden at 2026-09-14 20:01:10 (tray/monitoring still running)
+[2026-09-14 20:01:10] Console closed at 2026-09-14 20:01:10
+[2026-09-14 20:01:10] Console UI session ended at 2026-09-14 20:01:10
+[2026-09-14 21:35:20] Configuration loaded: 5 device(s)
+[2026-09-14 21:35:20] Application startup at 2026-09-14 21:35:20
+[2026-09-14 21:35:20] Configuration loaded: 5 device(s)
+[2026-09-14 21:35:21] Tray application starting at 2026-09-14 21:35:21
+[2026-09-14 21:35:21] Monitoring started
+[2026-09-14 21:35:23] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-14 21:35:23] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-14 21:35:23] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-09-14 21:35:23] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-14 21:35:23] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-14 21:39:33] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-14 21:42:34] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-14 21:42:46] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-14 21:43:14] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-14 21:43:47] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-14 22:00:56] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-14 22:01:01] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-15 01:30:51] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-15 01:30:56] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-15 01:31:25] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-15 01:31:30] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-15 01:36:26] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-15 01:36:31] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-15 01:54:36] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-15 01:54:41] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-15 02:14:31] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-15 02:14:36] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-15 02:35:32] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-15 02:35:37] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-15 14:28:25] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-15 14:28:31] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-15 16:01:14] Tray Exit requested at 2026-09-15 16:01:14
+[2026-09-15 16:01:14] Console destroyed at 2026-09-15 16:01:14
+[2026-09-15 16:01:14] Monitoring stopped
+[2026-09-15 16:01:14] Console destroyed at 2026-09-15 16:01:14
+[2026-09-15 16:01:14] Tray application stopped at 2026-09-15 16:01:14
+[2026-09-15 16:01:15] Application shutdown at 2026-09-15 16:01:15
+[2026-09-18 22:05:54] Configuration loaded: 5 device(s)
+[2026-09-18 22:05:54] Application startup at 2026-09-18 22:05:54
+[2026-09-18 22:05:54] Configuration loaded: 5 device(s)
+[2026-09-18 22:05:54] Tray application starting at 2026-09-18 22:05:54
+[2026-09-18 22:05:54] Monitoring started
+[2026-09-18 22:05:54] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-18 22:05:54] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-18 22:05:54] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> ONLINE
+[2026-09-18 22:05:54] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-18 22:05:54] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-18 23:17:39] Status change: My Device (XenoTech) (192.168.1.192) ONLINE -> OFFLINE
+[2026-09-18 23:17:39] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-18 23:17:39] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-18 23:17:39] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-09-18 23:17:39] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-18 23:17:49] Status change: My Device (XenoTech) (192.168.1.192) OFFLINE -> ONLINE
+[2026-09-18 23:17:49] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-18 23:17:49] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-18 23:17:49] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-09-18 23:17:49] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-18 23:41:47] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-18 23:41:52] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-19 01:24:36] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-19 01:24:41] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-19 01:27:28] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-19 01:27:33] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-19 05:05:46] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-19 05:06:05] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-19 05:33:42] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-19 05:33:47] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-19 05:37:30] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-19 05:37:42] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-19 07:01:03] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-19 07:01:08] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-19 07:08:52] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-19 07:08:57] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-19 07:51:33] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-19 07:51:38] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-19 21:44:03] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-19 21:44:03] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-19 21:44:03] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-09-19 21:44:03] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-19 21:44:09] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-19 21:44:09] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-19 21:44:09] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-09-19 21:44:14] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-22 10:55:11] Configuration loaded: 5 device(s)
+[2026-09-22 10:55:11] Application startup at 2026-09-22 10:55:11
+[2026-09-22 10:55:11] Configuration loaded: 5 device(s)
+[2026-09-22 10:55:11] Tray application starting at 2026-09-22 10:55:11
+[2026-09-22 10:55:11] Monitoring started
+[2026-09-22 10:55:12] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-22 10:55:12] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-22 10:55:12] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> ONLINE
+[2026-09-22 10:55:12] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-22 10:55:12] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-22 19:15:44] Configuration loaded: 5 device(s)
+[2026-09-22 19:15:44] Application startup at 2026-09-22 19:15:44
+[2026-09-22 19:15:44] Configuration loaded: 5 device(s)
+[2026-09-22 19:15:44] Tray application starting at 2026-09-22 19:15:44
+[2026-09-22 19:15:44] Monitoring started
+[2026-09-22 19:15:44] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-09-22 19:15:44] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-09-22 19:15:44] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> ONLINE
+[2026-09-22 19:15:44] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-09-22 19:15:44] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-09-23 00:26:46] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-23 00:26:46] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-23 00:26:46] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-09-23 00:26:46] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-23 04:38:25] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-23 04:38:25] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-23 04:38:25] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-09-23 04:38:25] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-23 05:55:43] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-23 05:55:48] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-23 14:17:30] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-23 14:17:35] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-23 14:19:19] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-23 14:19:24] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-23 17:11:10] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-23 17:11:57] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-23 18:41:11] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-23 18:42:06] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-23 18:44:46] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-23 18:45:13] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-23 18:51:39] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-23 18:52:06] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-23 20:24:50] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-23 20:25:18] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-23 20:27:13] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-23 20:27:26] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-23 20:27:33] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-23 20:27:39] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-23 20:35:34] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-23 20:36:01] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-23 20:38:57] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-23 20:39:03] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-23 20:45:16] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-09-23 20:49:05] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-09-23 23:02:46] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-23 23:02:51] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-24 03:58:01] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-24 03:58:01] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-24 03:58:01] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-09-24 03:58:01] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-09-24 03:58:06] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-24 03:58:06] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-24 03:58:06] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-09-24 03:58:06] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-09-24 14:52:16] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-09-24 14:52:42] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-09-24 19:02:31] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-24 19:02:44] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-24 19:06:21] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-24 19:06:27] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-09-24 19:06:59] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-09-24 19:07:11] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-01 17:58:07] Configuration loaded: 5 device(s)
+[2026-10-01 17:58:07] Application startup at 2026-10-01 17:58:07
+[2026-10-01 17:58:07] Configuration loaded: 5 device(s)
+[2026-10-01 17:58:07] Tray application starting at 2026-10-01 17:58:07
+[2026-10-01 17:58:07] Monitoring started
+[2026-10-01 17:58:08] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-01 17:58:08] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-01 17:58:08] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> ONLINE
+[2026-10-01 17:58:08] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-01 17:58:08] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-01 18:25:12] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-10-01 18:25:18] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-10-01 18:25:25] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-10-01 18:25:37] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-10-01 20:32:24] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-10-01 20:32:32] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-10-01 20:33:16] Status change: My Device (XenoTech) (192.168.1.192) ONLINE -> OFFLINE
+[2026-10-01 20:33:21] Status change: My Device (XenoTech) (192.168.1.192) OFFLINE -> ONLINE
+[2026-10-01 21:16:04] Tray Exit requested at 2026-10-01 21:16:04
+[2026-10-01 21:16:04] Console destroyed at 2026-10-01 21:16:04
+[2026-10-01 21:16:04] Monitoring stopped
+[2026-10-01 21:16:04] Console destroyed at 2026-10-01 21:16:04
+[2026-10-01 21:16:04] Tray application stopped at 2026-10-01 21:16:04
+[2026-10-01 21:16:04] Application shutdown at 2026-10-01 21:16:04
+[2026-10-02 16:44:59] Configuration loaded: 5 device(s)
+[2026-10-02 16:44:59] Application startup at 2026-10-02 16:44:59
+[2026-10-02 16:44:59] Configuration loaded: 5 device(s)
+[2026-10-02 16:45:00] Tray application starting at 2026-10-02 16:45:00
+[2026-10-02 16:45:00] Monitoring started
+[2026-10-02 16:45:02] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-02 16:45:02] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-02 16:45:02] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-02 16:45:02] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-02 16:45:02] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-02 18:07:47] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-02 18:07:47] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-02 18:08:06] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-02 18:08:06] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-02 21:04:59] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-02 21:05:08] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-02 21:14:56] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-02 21:15:03] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-03 14:02:53] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-10-03 14:03:00] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-10-03 14:05:34] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-10-03 14:05:41] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-10-03 14:10:48] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-10-03 14:11:02] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-10-03 14:21:24] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-10-03 14:21:31] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-10-04 17:25:19] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-04 17:25:26] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-06 20:07:17] Configuration loaded: 5 device(s)
+[2026-10-06 20:07:17] Application startup at 2026-10-06 20:07:17
+[2026-10-06 20:07:17] Configuration loaded: 5 device(s)
+[2026-10-06 20:07:17] Tray application starting at 2026-10-06 20:07:17
+[2026-10-06 20:07:17] Monitoring started
+[2026-10-06 20:07:19] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-06 20:07:19] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-06 20:07:19] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-06 20:07:19] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-06 20:07:19] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-06 20:14:05] Status change: My Device (XenoTech) (192.168.1.192) ONLINE -> OFFLINE
+[2026-10-06 20:14:13] Status change: My Device (XenoTech) (192.168.1.192) OFFLINE -> ONLINE
+[2026-10-06 23:29:46] Configuration loaded: 5 device(s)
+[2026-10-06 23:29:46] Application startup at 2026-10-06 23:29:46
+[2026-10-06 23:29:46] Configuration loaded: 5 device(s)
+[2026-10-06 23:29:46] Tray application starting at 2026-10-06 23:29:46
+[2026-10-06 23:29:46] Monitoring started
+[2026-10-06 23:29:50] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-06 23:29:50] Status change: Main Server (192.168.1.254) UNKNOWN -> OFFLINE
+[2026-10-06 23:29:50] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-06 23:29:50] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-06 23:29:50] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-06 23:43:48] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-07 00:26:21] Status change: My Device (XenoTech) (192.168.1.192) ONLINE -> OFFLINE
+[2026-10-07 00:26:51] Status change: My Device (XenoTech) (192.168.1.192) OFFLINE -> ONLINE
+[2026-10-07 18:48:04] Configuration loaded: 5 device(s)
+[2026-10-07 18:48:04] Application startup at 2026-10-07 18:48:04
+[2026-10-07 18:48:04] Configuration loaded: 5 device(s)
+[2026-10-07 18:48:04] Tray application starting at 2026-10-07 18:48:04
+[2026-10-07 18:48:04] Monitoring started
+[2026-10-07 18:48:06] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-07 18:48:06] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-07 18:48:06] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-07 18:48:06] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-07 18:48:06] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-07 19:06:34] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-07 19:06:41] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-07 19:15:28] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-07 19:15:53] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-07 19:35:10] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-07 20:02:18] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-10-07 20:02:27] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-10-07 22:57:44] Console created at 2026-10-07 22:57:44
+[2026-10-07 22:57:45] Console opened at 2026-10-07 22:57:45
+[2026-10-07 22:57:52] Static check completed at 2026-10-07 22:57:52
+[2026-10-08 23:11:05] Configuration loaded: 5 device(s)
+[2026-10-08 23:11:05] Application startup at 2026-10-08 23:11:05
+[2026-10-08 23:11:05] Configuration loaded: 5 device(s)
+[2026-10-08 23:11:06] Tray application starting at 2026-10-08 23:11:06
+[2026-10-08 23:11:06] Monitoring started
+[2026-10-08 23:11:08] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-08 23:11:08] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-08 23:11:08] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-08 23:11:08] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-08 23:11:08] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-09 02:06:08] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-09 02:06:08] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-09 08:53:40] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-09 08:53:40] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-09 19:08:30] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-09 19:08:30] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-09 19:08:37] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-09 19:11:43] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-09 19:11:56] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-09 19:12:44] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-09 19:12:44] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-09 19:12:51] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-09 19:13:26] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-09 19:13:26] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-09 19:13:26] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-09 19:17:00] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-09 19:17:13] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-09 19:19:06] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-09 19:19:06] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-09 19:19:15] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-09 19:19:15] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-09 19:19:51] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-09 19:20:00] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-09 19:20:49] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-09 19:20:49] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-09 19:20:57] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-10 11:43:12] Configuration loaded: 5 device(s)
+[2026-10-10 11:43:12] Application startup at 2026-10-10 11:43:12
+[2026-10-10 11:43:12] Configuration loaded: 5 device(s)
+[2026-10-10 11:43:12] Tray application starting at 2026-10-10 11:43:12
+[2026-10-10 11:43:12] Monitoring started
+[2026-10-10 11:43:14] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-10 11:43:14] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-10 11:43:14] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-10 11:43:14] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-10 11:43:14] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-10 11:43:44] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-10 11:43:44] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-10 11:43:53] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-10 11:46:11] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-10 11:46:24] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-10 11:47:29] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-10 11:47:42] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-10 11:48:33] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-10 11:48:46] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-10 11:50:29] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-10 11:50:42] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-10 11:51:59] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-10 11:52:12] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-10 11:52:24] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-10 11:52:33] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-10 11:52:42] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-10 11:52:42] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-10 11:53:13] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-10-10 11:53:13] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-10 11:53:22] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-10 11:53:22] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-10-10 11:53:29] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-10 11:54:39] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-10 11:54:39] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-10 11:54:39] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-10 11:55:18] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-10 11:55:27] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-10 11:55:34] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-11 03:19:56] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-11 03:20:12] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-11 05:00:20] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-11 05:00:27] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-11 08:30:22] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-11 08:30:29] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-11 09:39:56] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-11 09:40:03] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-11 15:59:28] Console created at 2026-10-11 15:59:28
+[2026-10-11 15:59:28] Console opened at 2026-10-11 15:59:28
+[2026-10-11 15:59:32] IP scanner started at 2026-10-11 15:59:32
+[2026-10-11 15:59:35] IP scanner completed at 2026-10-11 15:59:35: 20 device(s) discovered
+[2026-10-11 15:59:37] Status change: PisoWifi Bluestuck (192.168.1.33) OFFLINE -> ONLINE
+[2026-10-11 15:59:44] Status change: PisoWifi Bluestuck (192.168.1.33) ONLINE -> OFFLINE
+[2026-10-11 16:00:42] Console closed at 2026-10-11 16:00:42
+[2026-10-12 19:37:49] Configuration loaded: 5 device(s)
+[2026-10-12 19:37:49] Application startup at 2026-10-12 19:37:49
+[2026-10-12 19:37:49] Configuration loaded: 5 device(s)
+[2026-10-12 19:37:50] Tray application starting at 2026-10-12 19:37:50
+[2026-10-12 19:37:50] Monitoring started
+[2026-10-12 19:37:52] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-12 19:37:52] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-12 19:37:52] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-12 19:37:52] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-12 19:37:52] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-12 21:39:20] Status change: My Device (XenoTech) (192.168.1.192) ONLINE -> OFFLINE
+[2026-10-12 21:39:20] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-12 21:39:27] Status change: My Device (XenoTech) (192.168.1.192) OFFLINE -> ONLINE
+[2026-10-12 21:39:27] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-12 21:39:43] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-12 21:40:00] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-12 21:40:00] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-12 21:40:07] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-12 23:59:03] Configuration loaded: 5 device(s)
+[2026-10-12 23:59:03] Application startup at 2026-10-12 23:59:03
+[2026-10-12 23:59:03] Configuration loaded: 5 device(s)
+[2026-10-12 23:59:03] Tray application starting at 2026-10-12 23:59:03
+[2026-10-12 23:59:03] Monitoring started
+[2026-10-12 23:59:05] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-12 23:59:05] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-12 23:59:05] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-12 23:59:05] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-12 23:59:05] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-13 21:54:45] Configuration loaded: 5 device(s)
+[2026-10-13 21:54:45] Application startup at 2026-10-13 21:54:45
+[2026-10-13 21:54:45] Configuration loaded: 5 device(s)
+[2026-10-13 21:54:45] Tray application starting at 2026-10-13 21:54:45
+[2026-10-13 21:54:45] Monitoring started
+[2026-10-13 21:54:49] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-13 21:54:50] Status change: Main Server (192.168.1.254) UNKNOWN -> OFFLINE
+[2026-10-13 21:54:50] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-13 21:54:50] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-13 21:54:50] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-13 21:56:09] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-15 15:35:13] Configuration loaded: 5 device(s)
+[2026-10-15 15:35:13] Application startup at 2026-10-15 15:35:13
+[2026-10-15 15:35:13] Configuration loaded: 5 device(s)
+[2026-10-15 15:35:13] Tray application starting at 2026-10-15 15:35:13
+[2026-10-15 15:35:13] Monitoring started
+[2026-10-15 15:35:15] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-15 15:35:15] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-15 15:35:15] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-15 15:35:15] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-15 15:35:15] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-18 22:26:41] Configuration loaded: 5 device(s)
+[2026-10-18 22:26:41] Application startup at 2026-10-18 22:26:41
+[2026-10-18 22:26:41] Configuration loaded: 5 device(s)
+[2026-10-18 22:26:42] Tray application starting at 2026-10-18 22:26:42
+[2026-10-18 22:26:42] Monitoring started
+[2026-10-18 22:26:44] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-18 22:26:44] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-18 22:26:44] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-18 22:26:44] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-18 22:26:44] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-19 23:19:29] Status change: My Device (XenoTech) (192.168.1.192) ONLINE -> OFFLINE
+[2026-10-19 23:19:36] Status change: My Device (XenoTech) (192.168.1.192) OFFLINE -> ONLINE
+[2026-10-20 04:03:45] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-20 04:03:45] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-20 04:03:45] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-20 04:03:52] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-20 04:03:52] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-20 04:03:52] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-20 04:12:11] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-20 04:12:18] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-20 05:32:02] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-20 05:32:18] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-23 17:50:48] Configuration loaded: 5 device(s)
+[2026-10-23 17:50:48] Application startup at 2026-10-23 17:50:48
+[2026-10-23 17:50:48] Configuration loaded: 5 device(s)
+[2026-10-23 17:50:48] Tray application starting at 2026-10-23 17:50:48
+[2026-10-23 17:50:48] Monitoring started
+[2026-10-23 17:50:50] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-23 17:50:50] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-23 17:50:50] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-23 17:50:50] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-23 17:50:50] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-25 13:15:01] Configuration loaded: 5 device(s)
+[2026-10-25 13:15:01] Application startup at 2026-10-25 13:15:01
+[2026-10-25 13:15:01] Configuration loaded: 5 device(s)
+[2026-10-25 13:15:02] Tray application starting at 2026-10-25 13:15:02
+[2026-10-25 13:15:02] Monitoring started
+[2026-10-25 13:15:04] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-25 13:15:04] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-25 13:15:04] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-25 13:15:04] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-25 13:15:04] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-26 00:17:00] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-26 00:17:07] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-26 22:12:05] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-26 22:12:12] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-27 17:45:35] Configuration loaded: 5 device(s)
+[2026-10-27 17:45:35] Application startup at 2026-10-27 17:45:35
+[2026-10-27 17:45:35] Configuration loaded: 5 device(s)
+[2026-10-27 17:45:35] Tray application starting at 2026-10-27 17:45:35
+[2026-10-27 17:45:35] Monitoring started
+[2026-10-27 17:45:37] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-10-27 17:45:37] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-10-27 17:45:37] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-10-27 17:45:37] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-10-27 17:45:37] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-10-27 22:45:37] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-27 22:45:44] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-27 23:09:09] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-27 23:09:16] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-28 05:56:49] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-28 05:56:56] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-28 23:24:47] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-28 23:24:47] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-10-28 23:24:47] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-28 23:24:54] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-28 23:24:54] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-10-28 23:24:54] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-29 00:11:15] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-29 00:11:22] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-29 09:56:41] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-29 09:56:48] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-29 20:42:56] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-10-29 20:43:03] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-10-29 22:25:05] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-29 22:25:12] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-30 05:13:11] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-30 05:13:18] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-10-31 01:19:25] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-10-31 01:19:32] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-01 13:03:09] Configuration loaded: 5 device(s)
+[2026-11-01 13:03:09] Application startup at 2026-11-01 13:03:09
+[2026-11-01 13:03:09] Configuration loaded: 5 device(s)
+[2026-11-01 13:03:10] Tray application starting at 2026-11-01 13:03:10
+[2026-11-01 13:03:10] Monitoring started
+[2026-11-01 13:03:12] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-11-01 13:03:12] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-11-01 13:03:12] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-11-01 13:03:12] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-11-01 13:03:12] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-11-02 15:49:03] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-11-02 15:49:10] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-02 18:33:49] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-11-02 18:33:56] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-03 20:40:36] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-11-03 20:40:43] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-04 04:01:20] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-11-04 04:01:28] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-06 21:37:29] Status change: My Device (XenoTech) (192.168.1.192) ONLINE -> OFFLINE
+[2026-11-06 21:37:29] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-11-06 21:37:37] Status change: My Device (XenoTech) (192.168.1.192) OFFLINE -> ONLINE
+[2026-11-06 21:37:37] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-11-06 22:50:59] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-11-06 22:50:59] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-11-06 22:51:06] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-11-06 22:51:06] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-15 17:04:16] Configuration loaded: 5 device(s)
+[2026-11-15 17:04:16] Application startup at 2026-11-15 17:04:16
+[2026-11-15 17:04:16] Configuration loaded: 5 device(s)
+[2026-11-15 17:04:17] Tray application starting at 2026-11-15 17:04:17
+[2026-11-15 17:04:17] Monitoring started
+[2026-11-15 17:04:19] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-11-15 17:04:19] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-11-15 17:04:19] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-11-15 17:04:19] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-11-15 17:04:19] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-11-17 11:21:25] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-11-17 11:21:32] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-17 15:38:13] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-11-17 15:38:20] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-11-20 16:25:52] Configuration loaded: 5 device(s)
+[2026-11-20 16:25:52] Application startup at 2026-11-20 16:25:52
+[2026-11-20 16:25:52] Configuration loaded: 5 device(s)
+[2026-11-20 16:25:53] Tray application starting at 2026-11-20 16:25:53
+[2026-11-20 16:25:53] Monitoring started
+[2026-11-20 16:25:54] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-11-20 16:25:54] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-11-20 16:25:54] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-11-20 16:25:54] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-11-20 16:25:54] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-11-22 07:01:39] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-11-22 07:01:46] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-22 10:36:07] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-11-22 10:36:14] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-22 11:54:30] Configuration loaded: 5 device(s)
+[2026-11-22 11:54:30] Application startup at 2026-11-22 11:54:30
+[2026-11-22 11:54:30] Configuration loaded: 5 device(s)
+[2026-11-22 11:54:30] Tray application starting at 2026-11-22 11:54:30
+[2026-11-22 11:54:30] Monitoring started
+[2026-11-22 11:54:32] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-11-22 11:54:32] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-11-22 11:54:32] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-11-22 11:54:32] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-11-22 11:54:32] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-11-22 16:25:56] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-11-22 16:26:03] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-22 20:58:12] Status change: XenoRoom Wifi (192.168.1.191) ONLINE -> OFFLINE
+[2026-11-22 20:58:19] Status change: XenoRoom Wifi (192.168.1.191) OFFLINE -> ONLINE
+[2026-11-23 18:06:36] Configuration loaded: 5 device(s)
+[2026-11-23 18:06:36] Application startup at 2026-11-23 18:06:36
+[2026-11-23 18:06:36] Configuration loaded: 5 device(s)
+[2026-11-23 18:06:36] Tray application starting at 2026-11-23 18:06:36
+[2026-11-23 18:06:36] Monitoring started
+[2026-11-23 18:06:38] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-11-23 18:06:38] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-11-23 18:06:38] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-11-23 18:06:38] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-11-23 18:06:38] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-11-23 23:50:42] Status change: Main Server (192.168.1.254) ONLINE -> OFFLINE
+[2026-11-23 23:50:49] Status change: Main Server (192.168.1.254) OFFLINE -> ONLINE
+[2026-11-24 02:35:14] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-11-24 02:35:21] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-24 03:00:49] Status change: PLDT Router (192.168.1.1) ONLINE -> OFFLINE
+[2026-11-24 03:00:56] Status change: PLDT Router (192.168.1.1) OFFLINE -> ONLINE
+[2026-11-24 11:21:18] Configuration loaded: 5 device(s)
+[2026-11-24 11:21:18] Application startup at 2026-11-24 11:21:18
+[2026-11-24 11:21:18] Configuration loaded: 5 device(s)
+[2026-11-24 11:21:18] Tray application starting at 2026-11-24 11:21:18
+[2026-11-24 11:21:18] Monitoring started
+[2026-11-24 11:21:20] Status change: My Device (XenoTech) (192.168.1.192) UNKNOWN -> ONLINE
+[2026-11-24 11:21:20] Status change: Main Server (192.168.1.254) UNKNOWN -> ONLINE
+[2026-11-24 11:21:20] Status change: PisoWifi Bluestuck (192.168.1.33) UNKNOWN -> OFFLINE
+[2026-11-24 11:21:20] Status change: XenoRoom Wifi (192.168.1.191) UNKNOWN -> ONLINE
+[2026-11-24 11:21:20] Status change: PLDT Router (192.168.1.1) UNKNOWN -> ONLINE
+[2026-11-24 11:22:37] Windows startup disabled
+[2026-11-24 11:22:41] Tray Exit requested at 2026-11-24 11:22:41
+[2026-11-24 11:22:41] Console destroyed at 2026-11-24 11:22:41
+[2026-11-24 11:22:41] Monitoring stopped
+[2026-11-24 11:22:41] Console destroyed at 2026-11-24 11:22:41
+[2026-11-24 11:22:41] Tray application stopped at 2026-11-24 11:22:41
+[2026-11-24 11:22:41] Application shutdown at 2026-11-24 11:22:41
