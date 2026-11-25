@@ -8,8 +8,6 @@ Only Discord user IDs listed in settings may use them. The bot token is never
 logged.
 """
 
-from __future__ import annotations
-
 import asyncio
 import ipaddress
 import threading
@@ -18,7 +16,15 @@ from collections.abc import Callable
 from app_logger import log_event
 from config_loader import load_settings
 from engine import ENGINE
-from monitor import is_reachable
+from monitor import is_reachable_confirmed
+from netspeed import (
+    SpeedTestError,
+    agent_speedtest,
+    format_result,
+    link_speedtest,
+    run_internet_speedtest,
+    save_result,
+)
 from scanner import run_lan_scan
 
 StatusCallback = Callable[[str], None]
@@ -189,7 +195,8 @@ class DiscordBot:
                     "That is not a valid IPv4 address.", ephemeral=True)
                 return
             await interaction.response.defer(ephemeral=True, thinking=True)
-            reachable = await asyncio.to_thread(is_reachable, clean)
+            attempts = load_settings()["offline_after_failures"]
+            reachable = await asyncio.to_thread(is_reachable_confirmed, clean, attempts)
             status = "ONLINE" if reachable else "OFFLINE"
             await interaction.followup.send(
                 f"{_DOT[status]} `{clean}` is **{status}**", ephemeral=True)
@@ -215,6 +222,50 @@ class DiscordBot:
                 await interaction.followup.send(_clip("\n".join(lines)), ephemeral=True)
             finally:
                 bot._scan_busy = False
+
+        @tree.command(name="speedtest",
+                      description="Real speed test: this PC's internet, or a device running the speed agent")
+        @app_commands.describe(
+            device="Device name or IP (leave empty to test this PC's internet)",
+            link="Test the link between this PC and the device instead of its internet")
+        async def speedtest_cmd(interaction: discord.Interaction,
+                                device: str | None = None, link: bool = False) -> None:
+            if not await guard(interaction):
+                return
+            await interaction.response.defer(ephemeral=True, thinking=True)
+            settings = load_settings()
+            try:
+                if not device:
+                    label, kind = "This PC", "Internet"
+                    result = await asyncio.to_thread(run_internet_speedtest)
+                else:
+                    wanted = device.strip().lower()
+                    target = next((d for d in ENGINE.get_devices()
+                                   if d["name"].lower() == wanted or d["ip"] == wanted), None)
+                    if target is None:
+                        await interaction.followup.send(
+                            f"No monitored device matches `{device}`.", ephemeral=True)
+                        return
+                    if not settings["speed_agent_token"]:
+                        await interaction.followup.send(
+                            "Set the speed agent token in the app's Settings first.",
+                            ephemeral=True)
+                        return
+                    label = target["name"]
+                    args = (target["ip"], settings["speed_agent_port"],
+                            settings["speed_agent_token"])
+                    if link:
+                        kind = "Link to this PC"
+                        result = await asyncio.to_thread(link_speedtest, *args)
+                    else:
+                        kind = "Internet (device)"
+                        result = await asyncio.to_thread(agent_speedtest, *args)
+            except SpeedTestError as exc:
+                await interaction.followup.send(f"Speed test failed: {exc}", ephemeral=True)
+                return
+            save_result(label, kind, result)
+            await interaction.followup.send(
+                f"**{label}** \u2014 {kind}\n{format_result(result)}", ephemeral=True)
 
         @tree.command(name="start", description="Start continuous monitoring")
         async def start_cmd(interaction: discord.Interaction) -> None:

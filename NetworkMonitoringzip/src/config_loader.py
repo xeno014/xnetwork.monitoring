@@ -25,20 +25,26 @@ class AppSettings(TypedDict):
     discord_webhook_url: str
     check_interval_seconds: int
     scanner_duration_seconds: int
+    offline_after_failures: int
     start_monitoring_on_launch: bool
     discord_bot_token: str
     discord_allowed_user_ids: list
     discord_guild_id: int
+    speed_agent_token: str
+    speed_agent_port: int
 
 
 DEFAULT_SETTINGS: AppSettings = {
     "discord_webhook_url": "",
     "check_interval_seconds": 5,
     "scanner_duration_seconds": 60,
+    "offline_after_failures": 3,
     "start_monitoring_on_launch": True,
     "discord_bot_token": "",
     "discord_allowed_user_ids": [],
     "discord_guild_id": 0,
+    "speed_agent_token": "",
+    "speed_agent_port": 8765,
 }
 
 
@@ -191,6 +197,10 @@ def load_settings(settings_path: Path = SETTINGS_PATH) -> AppSettings:
     if isinstance(duration, int) and duration > 0:
         settings["scanner_duration_seconds"] = duration
 
+    failures = data.get("offline_after_failures", settings["offline_after_failures"])
+    if isinstance(failures, int) and not isinstance(failures, bool) and 1 <= failures <= 10:
+        settings["offline_after_failures"] = failures
+
     start = data.get(
         "start_monitoring_on_launch", settings["start_monitoring_on_launch"]
     )
@@ -219,6 +229,13 @@ def load_settings(settings_path: Path = SETTINGS_PATH) -> AppSettings:
     except ValueError:
         guild_int = 0
     settings["discord_guild_id"] = guild_int if guild_int > 0 else 0
+
+    agent_token = data.get("speed_agent_token", "")
+    if isinstance(agent_token, str):
+        settings["speed_agent_token"] = agent_token.strip()
+    agent_port = data.get("speed_agent_port", settings["speed_agent_port"])
+    if isinstance(agent_port, int) and not isinstance(agent_port, bool) and 1 <= agent_port <= 65535:
+        settings["speed_agent_port"] = agent_port
 
     return settings
 

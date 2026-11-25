@@ -179,6 +179,7 @@ copy config\settings.example.json config\settings.local.json
     "discord_webhook_url": "https://discord.com/api/webhooks/...",
     "check_interval_seconds": 5,
     "scanner_duration_seconds": 60,
+    "offline_after_failures": 3,
     "start_monitoring_on_launch": true
 }
 ```

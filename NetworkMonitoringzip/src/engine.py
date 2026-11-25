@@ -31,6 +31,7 @@ class MonitoringEngine:
         self._stop_event = threading.Event()
         self._thread: threading.Thread | None = None
         self._interval = 5
+        self._failure_attempts = 3
         self._webhook_url = ""
         self._listeners: list[Listener] = []
         self.config_error: str | None = None
@@ -49,6 +50,7 @@ class MonitoringEngine:
         devices = get_enabled_devices(load_devices())
         with self._lock:
             self._interval = settings["check_interval_seconds"]
+            self._failure_attempts = settings["offline_after_failures"]
             self._webhook_url = settings["discord_webhook_url"]
             previous_statuses = dict(self._statuses)
             self._devices = devices
@@ -96,8 +98,10 @@ class MonitoringEngine:
 
     def run_check_cycle(self, *, notify: bool = True) -> list[tuple[Device, Status]]:
         """Check all devices once; optionally Discord-notify on changes."""
-        devices = self.get_devices()
-        results = check_devices(devices)
+        with self._lock:
+            devices = list(self._devices)
+            attempts = self._failure_attempts
+        results = check_devices(devices, attempts)
         changes: list[tuple[Device, Status, Status]] = []
 
         with self._lock:
@@ -164,7 +168,7 @@ class MonitoringEngine:
             self._stop_event.set()
             thread = self._thread
         if thread is not None and thread.is_alive():
-            thread.join(timeout=self.get_interval() + 3)
+            thread.join(timeout=self.get_interval() + 20)
         log_event("Monitoring stopped")
         self._emit("monitoring_stopped", {"time": now_stamp()})
         return True

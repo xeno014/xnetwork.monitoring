@@ -26,6 +26,13 @@ from config_loader import (
 from device_manager import add_device
 from discord_bot import DiscordBot
 from engine import ENGINE
+from netspeed import (
+    SpeedTestError,
+    agent_speedtest,
+    link_speedtest,
+    run_internet_speedtest,
+    save_result,
+)
 from paths import ICON_PATH, LOGS_DIR, PROJECT_ROOT, now_stamp
 from scanner import run_lan_scan
 from startup import (
@@ -50,6 +57,8 @@ STATUS_LABELS = {
     "OFFLINE": "\u25cf OFFLINE",
     "UNKNOWN": "\u25cf UNKNOWN",
 }
+
+THIS_PC = "This PC (internet)"
 
 _mutex_handle = None  # keep the single-instance mutex alive
 
@@ -134,6 +143,16 @@ def _apply_theme(root: tk.Tk) -> None:
     style.configure("TCheckbutton", background=BG, foreground=FG)
     style.map("TCheckbutton", background=[("active", BG)],
               indicatorcolor=[("selected", GREEN), ("!selected", CARD)])
+    style.configure("TRadiobutton", background=BG, foreground=FG)
+    style.map("TRadiobutton", background=[("active", BG)],
+              indicatorcolor=[("selected", GREEN), ("!selected", CARD)])
+    style.configure("TCombobox", fieldbackground=CARD, background=HEADER,
+                    foreground=FG, arrowcolor=FG, padding=5)
+    style.map("TCombobox", fieldbackground=[("readonly", CARD)],
+              foreground=[("readonly", FG)])
+    root.option_add("*TCombobox*Listbox.background", CARD)
+    root.option_add("*TCombobox*Listbox.foreground", FG)
+    root.option_add("*TCombobox*Listbox.selectBackground", SELECT)
     style.configure("Horizontal.TProgressbar", background=GREEN,
                     troughcolor=CARD, borderwidth=0)
 
@@ -214,6 +233,8 @@ class App(tk.Tk):
         self._last_check = "\u2014"
         self._last_change: dict[str, str] = {}
         self._scanning = False
+        self._speed_busy = False
+        self._speed_names: list[str] = []
         self._tray = None
         self._tray_hint_shown = False
         self.bot = DiscordBot(
@@ -283,6 +304,7 @@ class App(tk.Tk):
         self.tabs.pack(fill="both", expand=True, padx=20, pady=(4, 16))
         self._build_devices_tab()
         self._build_scanner_tab()
+        self._build_speed_tab()
         self._build_log_tab()
         self._build_settings_tab()
 
@@ -351,6 +373,43 @@ class App(tk.Tk):
         self.scan_tree.tag_configure("monitored", foreground=GREEN)
         self.scan_tree.bind("<Double-1>", lambda _e: self._add_scan_selection())
 
+    def _build_speed_tab(self) -> None:
+        tab = ttk.Frame(self.tabs, padding=(0, 12, 0, 0))
+        self.tabs.add(tab, text="  Speed Test  ")
+
+        bar = ttk.Frame(tab)
+        bar.pack(fill="x", pady=(0, 6))
+        ttk.Label(bar, text="Target").pack(side="left")
+        self.speed_target = tk.StringVar(value=THIS_PC)
+        self.speed_combo = ttk.Combobox(bar, textvariable=self.speed_target,
+                                        state="readonly", width=28, values=[THIS_PC])
+        self.speed_combo.pack(side="left", padx=8)
+        self.speed_mode = tk.StringVar(value="internet")
+        ttk.Radiobutton(bar, text="Its internet", value="internet",
+                        variable=self.speed_mode).pack(side="left")
+        ttk.Radiobutton(bar, text="Link to this PC", value="link",
+                        variable=self.speed_mode).pack(side="left", padx=(8, 14))
+        self.speed_btn = ttk.Button(bar, text="Run Test", style="Accent.TButton",
+                                    command=self._run_selected_speed)
+        self.speed_btn.pack(side="left")
+        self.speed_all_btn = ttk.Button(bar, text="Test All Devices",
+                                        command=self._run_all_speed)
+        self.speed_all_btn.pack(side="left", padx=8)
+
+        self.speed_status = tk.StringVar(
+            value="This PC tests its own internet. Other devices need the Speed Agent running.")
+        ttk.Label(tab, textvariable=self.speed_status, style="Muted.TLabel").pack(
+            fill="x", pady=(0, 6))
+        self.speed_bar = ttk.Progressbar(tab, mode="indeterminate")
+        self.speed_bar.pack(fill="x", pady=(0, 8))
+
+        self.speed_tree = self._make_tree(
+            tab,
+            [("time", "Time"), ("target", "Target"), ("test", "Test"),
+             ("down", "Download (Mbps)"), ("up", "Upload (Mbps)"),
+             ("lat", "Latency (ms)")],
+            [150, 180, 150, 130, 120, 110])
+
     def _build_log_tab(self) -> None:
         tab = ttk.Frame(self.tabs, padding=(0, 12, 0, 0))
         self.tabs.add(tab, text="  Activity Log  ")
@@ -393,67 +452,89 @@ class App(tk.Tk):
         ttk.Spinbox(tab, from_=5, to=600, width=8,
                     textvariable=self.scan_dur_var).grid(row=1, column=1, sticky="w")
 
-        row(2, "Discord webhook URL (alerts)")
+        row(2, "Mark OFFLINE after N failed pings")
+        self.failures_var = tk.StringVar(value=str(settings["offline_after_failures"]))
+        ttk.Spinbox(tab, from_=1, to=10, width=8,
+                    textvariable=self.failures_var).grid(row=2, column=1, sticky="w")
+
+        row(3, "Discord webhook URL (alerts)")
         self.webhook_var = tk.StringVar(value=settings["discord_webhook_url"])
         self.webhook_entry = ttk.Entry(tab, textvariable=self.webhook_var,
                                        width=58, show="\u2022")
-        self.webhook_entry.grid(row=2, column=1, sticky="w")
+        self.webhook_entry.grid(row=3, column=1, sticky="w")
         self.show_hook = tk.BooleanVar(value=False)
         ttk.Checkbutton(
             tab, text="Show", variable=self.show_hook,
             command=lambda: self.webhook_entry.configure(
                 show="" if self.show_hook.get() else "\u2022"),
-        ).grid(row=2, column=2, sticky="w", padx=8)
+        ).grid(row=3, column=2, sticky="w", padx=8)
 
-        row(3, "Discord bot token (/commands)")
+        row(4, "Discord bot token (/commands)")
         self.bot_token_var = tk.StringVar(value=settings["discord_bot_token"])
         self.bot_token_entry = ttk.Entry(tab, textvariable=self.bot_token_var,
                                          width=58, show="\u2022")
-        self.bot_token_entry.grid(row=3, column=1, sticky="w")
+        self.bot_token_entry.grid(row=4, column=1, sticky="w")
         self.show_token = tk.BooleanVar(value=False)
         ttk.Checkbutton(
             tab, text="Show", variable=self.show_token,
             command=lambda: self.bot_token_entry.configure(
                 show="" if self.show_token.get() else "\u2022"),
-        ).grid(row=3, column=2, sticky="w", padx=8)
+        ).grid(row=4, column=2, sticky="w", padx=8)
 
-        row(4, "Allowed user IDs (comma separated)")
+        row(5, "Allowed user IDs (comma separated)")
         self.bot_users_var = tk.StringVar(
             value=", ".join(str(i) for i in settings["discord_allowed_user_ids"]))
         ttk.Entry(tab, textvariable=self.bot_users_var, width=58).grid(
-            row=4, column=1, sticky="w")
+            row=5, column=1, sticky="w")
 
-        row(5, "Server ID (optional)")
+        row(6, "Server ID (optional)")
         guild = settings["discord_guild_id"]
         self.bot_guild_var = tk.StringVar(value=str(guild) if guild else "")
         ttk.Entry(tab, textvariable=self.bot_guild_var, width=30).grid(
-            row=5, column=1, sticky="w")
+            row=6, column=1, sticky="w")
 
         self.bot_status_var = tk.StringVar(value="Bot: not running")
         ttk.Label(tab, textvariable=self.bot_status_var,
-                  style="Muted.TLabel").grid(row=6, column=1, sticky="w")
+                  style="Muted.TLabel").grid(row=7, column=1, sticky="w")
+
+        row(8, "Speed agent token")
+        self.agent_token_var = tk.StringVar(value=settings["speed_agent_token"])
+        self.agent_token_entry = ttk.Entry(tab, textvariable=self.agent_token_var,
+                                           width=40, show="\u2022")
+        self.agent_token_entry.grid(row=8, column=1, sticky="w")
+        self.show_agent = tk.BooleanVar(value=False)
+        ttk.Checkbutton(
+            tab, text="Show", variable=self.show_agent,
+            command=lambda: self.agent_token_entry.configure(
+                show="" if self.show_agent.get() else "\u2022"),
+        ).grid(row=8, column=2, sticky="w", padx=8)
+
+        row(9, "Speed agent port")
+        self.agent_port_var = tk.StringVar(value=str(settings["speed_agent_port"]))
+        ttk.Spinbox(tab, from_=1, to=65535, width=8,
+                    textvariable=self.agent_port_var).grid(row=9, column=1, sticky="w")
 
         self.autostart_var = tk.BooleanVar(value=settings["start_monitoring_on_launch"])
         ttk.Checkbutton(tab, text="Start monitoring when the app opens",
                         variable=self.autostart_var).grid(
-            row=7, column=1, sticky="w", pady=(10, 4))
+            row=10, column=1, sticky="w", pady=(10, 4))
 
         self.winstart_var = tk.BooleanVar(value=is_windows_startup_enabled())
         winstart = ttk.Checkbutton(tab, text="Run when Windows starts (in the tray)",
                                    variable=self.winstart_var,
                                    command=self._toggle_windows_startup)
-        winstart.grid(row=8, column=1, sticky="w", pady=4)
+        winstart.grid(row=11, column=1, sticky="w", pady=4)
         if sys.platform != "win32":
             winstart.state(["disabled"])
 
         self.settings_msg = tk.StringVar()
         ttk.Button(tab, text="Save Settings", style="Accent.TButton",
-                   command=self._save_settings).grid(row=9, column=1, sticky="w",
+                   command=self._save_settings).grid(row=12, column=1, sticky="w",
                                                      pady=(14, 4))
         ttk.Label(tab, textvariable=self.settings_msg, style="Muted.TLabel").grid(
-            row=10, column=1, sticky="w")
+            row=13, column=1, sticky="w")
         ttk.Label(tab, text=f"Config & logs folder: {PROJECT_ROOT}",
-                  style="Muted.TLabel").grid(row=11, column=0, columnspan=3,
+                  style="Muted.TLabel").grid(row=14, column=0, columnspan=3,
                                              sticky="w", pady=(18, 0))
 
     # --- tray -------------------------------------------------------------------
@@ -572,6 +653,27 @@ class App(tk.Tk):
             self._refresh_monitoring_state()
         elif event == "check_done":
             self.check_btn.state(["!disabled"])
+        elif event == "speed_progress":
+            self.speed_status.set(payload)
+        elif event == "speed_result":
+            label, test, result = payload
+            self.speed_status.set(
+                f"{label} ({test}): {result['download_mbps']:.1f} Mbps down / "
+                f"{result['upload_mbps']:.1f} Mbps up / {result['latency_ms']:.0f} ms")
+            self.speed_tree.insert("", 0, values=(
+                result["time"], label, test, f"{result['download_mbps']:.1f}",
+                f"{result['upload_mbps']:.1f}", f"{result['latency_ms']:.0f}"))
+            self._log(f"Speed test {label} ({test}): "
+                      f"{result['download_mbps']:.1f} down / "
+                      f"{result['upload_mbps']:.1f} up Mbps", "good")
+        elif event == "speed_error":
+            self.speed_status.set(payload)
+            self._log(f"Speed test failed - {payload}", "bad")
+        elif event == "speed_done":
+            self._speed_busy = False
+            self.speed_bar.stop()
+            self.speed_btn.state(["!disabled"])
+            self.speed_all_btn.state(["!disabled"])
         elif event == "bot_status":
             self.bot_status_var.set(payload)
             self._log(payload, "bad" if "fail" in payload or "error" in payload
@@ -611,6 +713,13 @@ class App(tk.Tk):
                         self._last_change.get(d["ip"], "\u2014")),
                 tags=(status,),
             )
+
+        names = [d["name"] for d in devices]
+        if names != self._speed_names:
+            self._speed_names = names
+            self.speed_combo.configure(values=[THIS_PC] + names)
+            if self.speed_target.get() not in [THIS_PC] + names:
+                self.speed_target.set(THIS_PC)
 
         self.card_vars["total"].set(str(len(devices)))
         self.card_vars["online"].set(str(online))
@@ -737,6 +846,67 @@ class App(tk.Tk):
             return
         self._open_add_dialog(ip=selection[0])
 
+    # --- speed test tab ------------------------------------------------------------
+    def _run_selected_speed(self) -> None:
+        choice = self.speed_target.get()
+        if choice == THIS_PC:
+            self._run_speed([(THIS_PC, "internet", None)])
+            return
+        device = next((d for d in ENGINE.get_devices() if d["name"] == choice), None)
+        if device is None:
+            messagebox.showinfo("Speed Test", "Pick a target first.")
+            return
+        self._run_speed([(device["name"], self.speed_mode.get(), device)])
+
+    def _run_all_speed(self) -> None:
+        statuses = ENGINE.get_statuses()
+        jobs = [(THIS_PC, "internet", None)]
+        for device in ENGINE.get_devices():
+            if statuses.get(device["ip"]) != "OFFLINE":
+                jobs.append((device["name"], "internet", device))
+        self._run_speed(jobs)
+
+    def _run_speed(self, jobs: list) -> None:
+        if self._speed_busy:
+            return
+        self._speed_busy = True
+        self.speed_btn.state(["disabled"])
+        self.speed_all_btn.state(["disabled"])
+        self.speed_bar.start(12)
+        self.speed_status.set("Starting speed test...")
+        settings = load_settings()
+        token, port = settings["speed_agent_token"], settings["speed_agent_port"]
+        put = self._events.put
+
+        def worker() -> None:
+            for label, kind, device in jobs:
+                def progress(message: str, label: str = label) -> None:
+                    put(("speed_progress", f"{label}: {message}"))
+
+                try:
+                    if device is None:
+                        test, result = "Internet", run_internet_speedtest(progress)
+                    elif not token:
+                        raise SpeedTestError(
+                            "set the speed agent token in Settings first.")
+                    elif kind == "link":
+                        test = "Link to this PC"
+                        result = link_speedtest(device["ip"], port, token,
+                                                on_progress=progress)
+                    else:
+                        test = "Internet (device)"
+                        result = agent_speedtest(device["ip"], port, token, progress)
+                    save_result(label, test, result)
+                    put(("speed_result", (label, test, result)))
+                except SpeedTestError as exc:
+                    put(("speed_error", f"{label}: {exc}"))
+                except Exception as exc:
+                    log_event(f"GUI speed test error: {exc}")
+                    put(("speed_error", f"{label}: {type(exc).__name__}: {exc}"))
+            put(("speed_done", {}))
+
+        threading.Thread(target=worker, daemon=True).start()
+
     # --- log tab ------------------------------------------------------------------
     def _log(self, message: str, tag: str = "info") -> None:
         self.log_text.configure(state="normal")
@@ -772,6 +942,12 @@ class App(tk.Tk):
         try:
             interval = int(self.interval_var.get())
             duration = int(self.scan_dur_var.get())
+            failures = int(self.failures_var.get())
+            agent_port = int(self.agent_port_var.get())
+            if not 1 <= agent_port <= 65535:
+                raise ValueError("Speed agent port must be between 1 and 65535.")
+            if not 1 <= failures <= 10:
+                raise ValueError("Failed pings before OFFLINE must be between 1 and 10.")
             if not 1 <= interval <= 3600:
                 raise ValueError("Check interval must be between 1 and 3600 seconds.")
             if not 5 <= duration <= 600:
@@ -797,10 +973,13 @@ class App(tk.Tk):
                 "discord_webhook_url": self.webhook_var.get().strip(),
                 "check_interval_seconds": interval,
                 "scanner_duration_seconds": duration,
+                "offline_after_failures": failures,
                 "start_monitoring_on_launch": bool(self.autostart_var.get()),
                 "discord_bot_token": self.bot_token_var.get().strip(),
                 "discord_allowed_user_ids": user_ids,
                 "discord_guild_id": int(guild_text) if guild_text else 0,
+                "speed_agent_token": self.agent_token_var.get().strip(),
+                "speed_agent_port": agent_port,
             })
             ENGINE.reload_config()
         except (ValueError, OSError) as exc:

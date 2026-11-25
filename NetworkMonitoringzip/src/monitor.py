@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import subprocess
 import sys
+import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 
 from config_loader import Device
@@ -46,20 +48,45 @@ def is_reachable(ip: str, timeout_ms: int = PING_TIMEOUT_MS) -> bool:
         return False
 
 
+def is_reachable_confirmed(ip: str, attempts: int = 1, pause: float = 1.0) -> bool:
+    """Return True on the first successful ping; False only after ``attempts`` failures.
+
+    This filters out one-off lost pings (Wi-Fi hiccups) before a device is
+    declared OFFLINE.
+    """
+    attempts = max(1, int(attempts))
+    for index in range(attempts):
+        if is_reachable(ip):
+            return True
+        if index < attempts - 1:
+            time.sleep(pause)
+    return False
+
+
 def status_from_reachable(reachable: bool) -> Status:
     return "ONLINE" if reachable else "OFFLINE"
 
 
-def check_devices(devices: list[Device]) -> list[tuple[Device, Status]]:
-    """Ping each device once and return (device, status) pairs."""
-    results: list[tuple[Device, Status]] = []
-    for device in devices:
+def check_devices(
+    devices: list[Device], attempts: int = 1
+) -> list[tuple[Device, Status]]:
+    """Check every device (in parallel) and return (device, status) pairs in order.
+
+    A device is OFFLINE only if all ``attempts`` pings fail.
+    """
+    if not devices:
+        return []
+
+    def check_one(device: Device) -> tuple[Device, Status]:
         try:
-            reachable = is_reachable(device["ip"])
-            results.append((device, status_from_reachable(reachable)))
+            reachable = is_reachable_confirmed(device["ip"], attempts)
+            return device, status_from_reachable(reachable)
         except Exception:
-            results.append((device, "UNKNOWN"))
-    return results
+            return device, "UNKNOWN"
+
+    workers = min(32, len(devices))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        return list(pool.map(check_one, devices))
 
 
 def display_check_results(results: list[tuple[Device, bool | Status]]) -> None:
